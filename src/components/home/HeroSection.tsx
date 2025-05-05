@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
           <p className="text-lg md:text-xl mb-12 text-gray-600 max-w-2xl mx-auto">
             Engage customers with intelligent chatbots powered by AI, backed by human experts when needed.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button to="/demo" variant="primary" size="lg" className="flex items-center justify-center" href="https://calendly.com/kevin-crowdchat/chatinsight-demo">
               Book a Demo
@@ -31,19 +31,19 @@ const HeroSection: React.FC = () => {
         <div className="absolute -left-8 top-1/4 w-24 h-24 rounded-full bg-primary opacity-5"></div>
         <div className="absolute right-1/4 top-1/3 w-32 h-32 rounded-full bg-accent2 opacity-5"></div>
         <div className="absolute left-1/3 bottom-1/4 w-40 h-40 rounded-full bg-secondary opacity-10"></div>
-        
-        {/* Profile Images */}
-        <div className="absolute left-16 top-1/3 w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden">
+
+        {/* Profile Images with animation */}
+        <div className="absolute left-16 top-1/3 w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden animate-float">
           <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute right-24 top-1/2 w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden">
+        <div className="absolute right-24 top-1/2 w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden animate-float delay-500">
           <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg" alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute left-1/3 bottom-1/4 w-14 h-14 rounded-full border-4 border-white shadow-lg overflow-hidden">
+        <div className="absolute left-1/3 bottom-1/4 w-14 h-14 rounded-full border-4 border-white shadow-lg overflow-hidden animate-float delay-1000">
           <img src="https://images.pexels.com/photos/5704720/pexels-photo-5704720.jpeg" alt="" className="w-full h-full object-cover" />
         </div>
       </div>
-    
+
       {/* Stats Section */}
       <div className="relative z-10 mt-24 max-w-5xl mx-auto">
         <div className="bg-white rounded-2xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
