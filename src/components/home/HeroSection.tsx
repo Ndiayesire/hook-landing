@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="relative z-10 mt-24 max-w-5xl mx-auto">
+      <div className="relative mt-24 max-w-5xl mx-auto">
         <div className="bg-white rounded-2xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-2 text-primary">97%</h3>

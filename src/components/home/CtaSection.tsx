@@ -7,7 +7,7 @@ const CtaSection: React.FC = () => {
     <div className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="bg-gray-50 rounded-lg p-8 md:p-12 relative overflow-hidden">
-          <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <div className="relative max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
               Ready to Transform Your Customer Interactions?
             </h2>
