@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            24/7 <span className="text-primary">AI support</span> for<br />instant help
+            24/7 Papa<span className="text-primary">AI support</span> for<br />instant help
           </h1>
           <p className="text-lg md:text-xl mb-12 text-gray-600 max-w-2xl mx-auto">
             Engage customers with intelligent chatbots powered by AI, backed by human experts when needed.
