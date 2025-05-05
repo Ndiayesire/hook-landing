@@ -65,7 +65,7 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ isOpen, onClose }) =>
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-primary bg-opacity-50 z-50 flex items-center justify-center p-4">
+<div className="fixed inset-0 bg-primary bg-opacity-50 z-[9999] flex items-center justify-center p-4">
       <div className="bg-white rounded-lg p-6 max-w-md w-full relative">
         {submitted ? (
           <div className="text-center">
