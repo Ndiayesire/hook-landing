@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/demo" variant="primary" size="lg" className="flex items-center justify-center" href="https://calendly.com/kevin-crowdchat/chatinsight-demo">
+            <Button to="/demo" variant="primary" size="lg" className="flex items-center justify-center hover:scale-105 transition-all duration-300" href="https://calendly.com/kevin-crowdchat/chatinsight-demo">
               Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -34,13 +34,13 @@ const HeroSection: React.FC = () => {
 
         {/* Profile Images with animation */}
         <div className="absolute left-16 top-1/3 w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden animate-float">
-          <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Profile 1" className="w-full h-full object-cover" />
         </div>
         <div className="absolute right-24 top-1/2 w-20 h-20 rounded-full border-4 border-white shadow-lg overflow-hidden animate-float delay-500">
-          <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg" alt="" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg" alt="Profile 2" className="w-full h-full object-cover" />
         </div>
         <div className="absolute left-1/3 bottom-1/4 w-14 h-14 rounded-full border-4 border-white shadow-lg overflow-hidden animate-float delay-1000">
-          <img src="https://images.pexels.com/photos/5704720/pexels-photo-5704720.jpeg" alt="" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/5704720/pexels-photo-5704720.jpeg" alt="Profile 3" className="w-full h-full object-cover" />
         </div>
       </div>
 
