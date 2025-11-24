@@ -114,7 +114,7 @@ const FinalCTASection: React.FC = () => {
                   <span>How many sales went to competitors who responded faster?</span>
                 </li>
               </ul>
-              <p className="text-xl font-semibold text-center mt-6 pt-6 border-t border-gray-300">
+              <p className="text-xl font-semibold text-center mt-6 pt-6 border-t border-gray-300 text-white">
                 What if you could capture even <span className="text-success">20%</span> of those lost opportunities?
               </p>
               <p className="text-center text-gray-700">
