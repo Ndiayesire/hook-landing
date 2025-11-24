@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import SaasPage from './pages/SaasPage';
 import ServicesPage from './pages/ServicesPage';
 import ChatInsightPage from './pages/ChatInsightPage';
+import EcommerceAIPage from './pages/EcommerceAIPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/saas" element={<SaasPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/chatinsight" element={<ChatInsightPage />} />
+            <Route path="/ecommerce-ai-agent" element={<EcommerceAIPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />

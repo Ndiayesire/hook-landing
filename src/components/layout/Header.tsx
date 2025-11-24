@@ -37,6 +37,7 @@ const Header: React.FC = () => {
     { name: 'SaaS', path: '/saas' },
     { name: 'Services', path: '/services' },
     { name: 'ChatInsight', path: '/chatinsight' },
+    { name: 'Ecommerce AI', path: '/ecommerce-ai-agent' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
