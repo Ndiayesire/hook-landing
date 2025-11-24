@@ -10,7 +10,7 @@ const testimonials = [
     company: ""
   },
   {
-    quote: "The ChatInsight analytics have given us a whole new perspective on customer interactions. We're now making data-driven decisions that deliver real results.",
+    quote: "The Custom AI System and dashboards have given us a whole new perspective on customer interactions. We're now making data-driven decisions that deliver real results.",
     author: "Michael R.",
     position: "Director of Marketing",
     company: ""

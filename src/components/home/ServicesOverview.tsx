@@ -88,12 +88,12 @@ const ServicesOverview: React.FC = () => {
           </div>
         </div>
 
-        {/* ChatInsight */}
+        {/* Custom AI Systems */}
         <div className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md border border-gray-100">
           <div className="w-full h-48 overflow-hidden">
             <img
               src="https://i.ibb.co/CpwbxyRR/chatinsight.png"
-              alt="ChatInsight Dashboard"
+              alt="Custom AI Systems Dashboard"
               className="w-full h-full object-cover"
             />
           </div>
@@ -101,25 +101,25 @@ const ServicesOverview: React.FC = () => {
             <div className="bg-gray-50 rounded-lg w-12 h-12 flex items-center justify-center mb-6">
               <BarChart3 className="h-5 w-5 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold mb-4 text-gray-900">ChatInsight</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">Custom AI Systems</h3>
             <p className="text-gray-600 mb-6 text-sm">
-              Turn conversations into actionable data with our advanced analytics platform.
+              Multi-agent AI systems and dashboards that generate revenue 24/7.
             </p>
             <ul className="space-y-3 mb-8 text-sm">
               <li className="flex items-start">
                 <span className="text-primary mr-2">✓</span>
-                <span>Lead scoring and chat summaries</span>
+                <span>Specialized multi-agent architecture</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">✓</span>
-                <span>Agent performance dashboard</span>
+                <span>Real-time transparency dashboards</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">✓</span>
-                <span>Conversion tracking</span>
+                <span>24/7 automated revenue generation</span>
               </li>
             </ul>
-            <Button to="/chatinsight" variant="secondary" className="w-full">
+            <Button to="/custom-ai-systems" variant="secondary" className="w-full">
               Learn More
             </Button>
           </div>

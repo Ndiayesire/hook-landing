@@ -153,7 +153,7 @@ const ContactPage: React.FC = () => {
                     <option value="general">General Information</option>
                     <option value="saas">HookTXT SaaS Platform</option>
                     <option value="services">Chat Services</option>
-                    <option value="chatinsight">ChatInsight</option>
+                    <option value="custom-ai">Custom AI Systems</option>
                     <option value="demo">Request a Demo</option>
                     <option value="pricing">Pricing Information</option>
                   </select>

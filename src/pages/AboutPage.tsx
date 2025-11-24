@@ -281,14 +281,14 @@ const AboutPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="md:text-right md:pr-12">
                   <h3 className="text-2xl font-bold text-primary mb-2">2022</h3>
-                  <h4 className="text-xl font-semibold text-accent2 mb-3">ChatInsight Launch</h4>
-                  <p className="text-gray-700">Introduction of our analytics platform, helping businesses gain actionable insights from customer conversations.</p>
+                  <h4 className="text-xl font-semibold text-accent2 mb-3">Custom AI Systems Launch</h4>
+                  <p className="text-gray-700">Introduction of our multi-agent AI systems and dual dashboard platform, helping businesses generate revenue 24/7 with complete transparency.</p>
                 </div>
                 <div className="md:pl-12">
                   <div className="bg-white p-4 rounded-lg shadow-soft">
-                    <img 
-                      src="https://images.pexels.com/photos/7947541/pexels-photo-7947541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                      alt="ChatInsight launch" 
+                    <img
+                      src="https://images.pexels.com/photos/7947541/pexels-photo-7947541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                      alt="Custom AI Systems launch" 
                       className="w-full h-auto rounded"
                     />
                   </div>

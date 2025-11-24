@@ -5,7 +5,7 @@ import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import SaasPage from './pages/SaasPage';
 import ServicesPage from './pages/ServicesPage';
-import ChatInsightPage from './pages/ChatInsightPage';
+import CustomAIPage from './pages/CustomAIPage';
 import EcommerceAIPage from './pages/EcommerceAIPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
@@ -24,7 +24,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/saas" element={<SaasPage />} />
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/chatinsight" element={<ChatInsightPage />} />
+            <Route path="/custom-ai-systems" element={<CustomAIPage />} />
             <Route path="/ecommerce-ai-agent" element={<EcommerceAIPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
