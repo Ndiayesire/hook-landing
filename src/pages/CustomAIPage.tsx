@@ -13,6 +13,7 @@ import DualDashboardSection from '../components/customai/DualDashboardSection';
 import CompetitiveAdvantagesSection from '../components/customai/CompetitiveAdvantagesSection';
 import ComparisonSection from '../components/customai/ComparisonSection';
 import ResultsImpactSection from '../components/customai/ResultsImpactSection';
+import CustomAIPricingSection from '../components/customai/CustomAIPricingSection';
 import CustomAIFAQSection from '../components/customai/CustomAIFAQSection';
 import CustomAIFinalCTASection from '../components/customai/CustomAIFinalCTASection';
 
@@ -29,6 +30,7 @@ const CustomAIPage: React.FC = () => {
       <CompetitiveAdvantagesSection />
       <ComparisonSection />
       <ResultsImpactSection />
+      <CustomAIPricingSection />
       <CustomAIFAQSection />
       <CustomAIFinalCTASection />
     </>
