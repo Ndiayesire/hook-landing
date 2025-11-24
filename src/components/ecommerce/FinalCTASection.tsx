@@ -144,46 +144,6 @@ const FinalCTASection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer Trust Section */}
-      <div className="bg-gray-50 py-12 border-t border-gray-200">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center text-sm text-gray-700">
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-success font-bold">✓</span>
-                <span>Trusted by 20+ e-commerce brands</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-success font-bold">✓</span>
-                <span>Generating $XXX,XXX+ in tracked chatbot revenue</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-success font-bold">✓</span>
-                <span>Based in Montreal, QC | Serving North America</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-success font-bold">✓</span>
-                <span>Bilingual support (EN/FR)</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-success font-bold">✓</span>
-                <span>90-day ROI guarantee</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span className="text-success font-bold">✓</span>
-                <span>CrowdChat.ca | AI Automation</span>
-              </div>
-            </div>
-
-            <div className="text-center mt-8 pt-8 border-t border-gray-300">
-              <p className="text-gray-700 mb-2">
-                📧 <a href="mailto:hello@crowdchat.ca" className="text-primary hover:underline font-semibold">hello@crowdchat.ca</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

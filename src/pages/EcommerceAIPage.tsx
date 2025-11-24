@@ -14,7 +14,6 @@ import HowItWorksSection from '../components/ecommerce/HowItWorksSection';
 import BenefitsSection from '../components/ecommerce/BenefitsSection';
 import CaseStudySection from '../components/ecommerce/CaseStudySection';
 import FeaturesBreakdownSection from '../components/ecommerce/FeaturesBreakdownSection';
-import TestimonialsSection from '../components/ecommerce/TestimonialsSection';
 import PricingSection from '../components/ecommerce/PricingSection';
 import FAQSection from '../components/ecommerce/FAQSection';
 import FinalCTASection from '../components/ecommerce/FinalCTASection';
@@ -33,7 +32,6 @@ const EcommerceAIPage: React.FC = () => {
       <BenefitsSection />
       <CaseStudySection />
       <FeaturesBreakdownSection />
-      <TestimonialsSection />
       <PricingSection />
       <FAQSection />
       <FinalCTASection />

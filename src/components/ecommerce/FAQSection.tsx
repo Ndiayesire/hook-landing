@@ -161,22 +161,6 @@ const FAQSection: React.FC = () => {
         <p class="mt-3">If you're in the "works best" category, this will transform your business.</p>
       `,
     },
-    {
-      question: 'Why CrowdChat? Why you?',
-      answer: `
-        <p>Because we don't sell generic chatbots.</p>
-        <p class="mt-2">We build revenue-generating AI systems custom-trained on your business.</p>
-        <p class="mt-3"><strong>Our background:</strong></p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li>Built multi-agent AI systems for automotive dealerships</li>
-          <li>Deployed chatbots generating 6-figures in tracked revenue</li>
-          <li>Specialized in e-commerce, hospitality, real estate</li>
-          <li>Based in Montreal, serving North American markets</li>
-          <li>Bilingual (English/French) support</li>
-        </ul>
-        <p class="mt-3">We're not a chatbot vendor. We're an AI automation agency. This is our flagship product because it works.</p>
-      `,
-    },
   ];
 
   return (

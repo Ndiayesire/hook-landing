@@ -89,11 +89,6 @@ const EcommerceHeroSection: React.FC = () => {
               See It In Action
             </Button>
           </div>
-
-          {/* Trust Badge */}
-          <p className="text-sm text-gray-200 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            Trusted by e-commerce brands generating <span className="font-bold text-secondary">$XXX,XXX+</span> in chatbot sales monthly
-          </p>
         </div>
       </div>
     </div>
