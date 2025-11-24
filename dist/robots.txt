@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /about
-Disallow: /team
-Disallow: /careers
-Disallow: /testimonials
