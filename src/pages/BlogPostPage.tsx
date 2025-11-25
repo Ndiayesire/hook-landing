@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import SEO from '../components/common/SEO';
+import ArticleSchema from '../components/common/ArticleSchema';
 import Section from '../components/common/Section';
 import Button from '../components/common/Button';
 import { Calendar, User, Clock, ArrowLeft, Share2, Bookmark, MessageCircle, Heart, Facebook, Twitter, Linkedin } from 'lucide-react';
@@ -188,9 +190,6 @@ const BlogPostPage: React.FC = () => {
     setPost(currentPost);
     
     if (currentPost) {
-      // Set page title
-      document.title = `${currentPost.title} | HookTXT Blog`;
-      
       // Get related posts
       const related = blogPosts.filter(
         p => currentPost.relatedPosts.includes(p.id)
@@ -213,8 +212,31 @@ const BlogPostPage: React.FC = () => {
     );
   }
 
+  // Extract first paragraph for description
+  const getDescription = (content: string): string => {
+    const firstParagraph = content.match(/<p>(.*?)<\/p>/);
+    return firstParagraph ? firstParagraph[1].substring(0, 160) : '';
+  };
+
   return (
     <>
+      <SEO
+        title={`${post.title} | HookTXT Blog`}
+        description={getDescription(post.content)}
+        canonicalUrl={`https://hooktxt.com/blog/${post.slug}`}
+        keywords={`${post.category}, conversational AI, customer experience, AI chatbot, business automation`}
+        ogImage={post.coverImage}
+        ogType="article"
+      />
+      <ArticleSchema
+        headline={post.title}
+        description={getDescription(post.content)}
+        author="HookTXT Team"
+        datePublished={post.date}
+        image={post.coverImage}
+        url={`https://hooktxt.com/blog/${post.slug}`}
+        category={post.category}
+      />
       {/* Hero Section */}
       <div className="pt-32 pb-12 md:pt-40 md:pb-16 bg-white">
         <div className="container mx-auto px-4">

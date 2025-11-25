@@ -3,6 +3,22 @@
  *
  * Reusable component for managing page-level SEO meta tags including
  * title, description, Open Graph tags, Twitter Cards, and canonical URLs.
+ *
+ * NOTE: Open Graph images should be created for each page:
+ * - Recommended size: 1200x630px (Facebook/LinkedIn standard)
+ * - Format: JPG or PNG
+ * - Keep text readable and centered
+ * - Include HookTXT branding
+ *
+ * Required OG images:
+ * - /og-home.jpg (Homepage)
+ * - /og-custom-ai.jpg (Custom AI Systems page)
+ * - /og-dealership-ai.jpg (Dealership AI page)
+ * - /og-ecommerce-ai.jpg (Ecommerce AI page)
+ * - /og-about.jpg (About page)
+ * - /og-contact.jpg (Contact page)
+ * - /og-blog.jpg (Blog listing page)
+ * - Individual blog post images use their cover images
  */
 
 import React from 'react';
