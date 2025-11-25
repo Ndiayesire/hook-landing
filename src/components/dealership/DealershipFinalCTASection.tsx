@@ -6,14 +6,14 @@
  */
 
 import React from 'react';
-import Section from '../common/Section';
 import Button from '../common/Button';
 import { Zap, TrendingUp, Clock } from 'lucide-react';
 
 const DealershipFinalCTASection: React.FC = () => {
   return (
-    <Section background="gradient">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-br from-primary via-accent2 to-primary text-white py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
         {/* Main CTA Message */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
@@ -144,8 +144,9 @@ const DealershipFinalCTASection: React.FC = () => {
             Not tomorrow. Not next month. NOW.
           </p>
         </div>
+        </div>
       </div>
-    </Section>
+    </div>
   );
 };
 

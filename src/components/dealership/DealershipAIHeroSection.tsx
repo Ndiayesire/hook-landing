@@ -7,14 +7,14 @@
  */
 
 import React from 'react';
-import Section from '../common/Section';
 import Button from '../common/Button';
 import { Clock, TrendingDown, TrendingUp, Moon } from 'lucide-react';
 
 const DealershipAIHeroSection: React.FC = () => {
   return (
-    <Section background="gradient" className="pt-32 pb-20">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-br from-primary via-accent2 to-primary text-white pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
         {/* Main Hero Content */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
@@ -169,8 +169,9 @@ const DealershipAIHeroSection: React.FC = () => {
             Your customers are online right now. Are you capturing them?
           </p>
         </div>
+        </div>
       </div>
-    </Section>
+    </div>
   );
 };
 
