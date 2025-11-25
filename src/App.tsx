@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
-import SaasPage from './pages/SaasPage';
-import ServicesPage from './pages/ServicesPage';
 import CustomAIPage from './pages/CustomAIPage';
+import DealershipAIPage from './pages/DealershipAIPage';
 import EcommerceAIPage from './pages/EcommerceAIPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
@@ -22,9 +21,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/saas" element={<SaasPage />} />
-            <Route path="/services" element={<ServicesPage />} />
             <Route path="/custom-ai-systems" element={<CustomAIPage />} />
+            <Route path="/dealership-ai" element={<DealershipAIPage />} />
             <Route path="/ecommerce-ai-agent" element={<EcommerceAIPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
