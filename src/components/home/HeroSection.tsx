@@ -43,16 +43,16 @@ const HeroSection: React.FC = () => {
               <p className="text-gray-200 text-sm">Multi-agent systems built for YOUR unique needs</p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-secondary hover:bg-white/20 transition-all relative">
-              <div className="absolute -top-3 right-4 bg-secondary text-primary px-3 py-1 rounded-full text-xs font-bold">
-                MOST POPULAR
-              </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-secondary hover:bg-white/20 transition-all">
               <div className="text-3xl font-bold text-secondary mb-2">Dealership AI</div>
               <p className="text-white font-semibold mb-2">For Auto Dealers</p>
               <p className="text-gray-200 text-sm">Capture after-hours leads automatically</p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-secondary hover:bg-white/20 transition-all">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-secondary hover:bg-white/20 transition-all relative">
+              <div className="absolute -top-3 right-4 bg-secondary text-primary px-3 py-1 rounded-full text-xs font-bold">
+                MOST POPULAR
+              </div>
               <div className="text-3xl font-bold text-secondary mb-2">Ecommerce AI</div>
               <p className="text-white font-semibold mb-2">For Online Stores</p>
               <p className="text-gray-200 text-sm">Recover abandoned carts instantly</p>

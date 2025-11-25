@@ -84,11 +84,7 @@ const ServicesOverview: React.FC = () => {
             </div>
 
             {/* Dealership AI */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-secondary hover:border-primary relative">
-              <div className="absolute top-4 right-4 z-10 bg-secondary text-primary px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
-                <Star className="h-4 w-4 fill-current" />
-                MOST POPULAR
-              </div>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-gray-100 hover:border-primary">
               <div className="w-full h-56 overflow-hidden bg-gradient-to-br from-primary/10 to-accent2/10">
                 <img
                   src="https://i.ibb.co/r2bBQJ35/dashboard.png"
@@ -145,7 +141,11 @@ const ServicesOverview: React.FC = () => {
             </div>
 
             {/* Ecommerce AI */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-gray-100 hover:border-primary">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-2 border-secondary hover:border-primary relative">
+              <div className="absolute top-4 right-4 z-10 bg-secondary text-primary px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+                <Star className="h-4 w-4 fill-current" />
+                MOST POPULAR
+              </div>
               <div className="w-full h-56 overflow-hidden bg-gradient-to-br from-primary/10 to-accent2/10">
                 <img
                   src="https://i.ibb.co/r2bBQJ35/dashboard.png"
