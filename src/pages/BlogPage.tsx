@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SEO from '../components/common/SEO';
 import { Link } from 'react-router-dom';
 import Section from '../components/common/Section';
 import Button from '../components/common/Button';
@@ -82,9 +83,6 @@ const BlogPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPosts, setFilteredPosts] = useState(blogPosts);
 
-  useEffect(() => {
-    document.title = 'Blog | HookTXT';
-  }, []);
 
   useEffect(() => {
     let result = blogPosts;
@@ -110,6 +108,13 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
+      <SEO
+        title="HookTXT Blog | AI Insights & Customer Experience Best Practices"
+        description="Expert insights on conversational AI, multi-agent systems, customer experience optimization, and business automation. Learn how to leverage AI for real revenue growth."
+        canonicalUrl="https://hooktxt.com/blog"
+        keywords="AI blog, conversational AI insights, customer experience, chatbot best practices, AI trends, business automation"
+        ogImage="https://hooktxt.com/og-blog.jpg"
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary to-accent2 text-white pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="container mx-auto px-4">

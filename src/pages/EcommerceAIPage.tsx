@@ -6,7 +6,8 @@
  * case studies, pricing, testimonials, FAQ, and final CTA sections.
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
+import SEO from '../components/common/SEO';
 import EcommerceHeroSection from '../components/ecommerce/EcommerceHeroSection';
 import RevenueLeakSection from '../components/ecommerce/RevenueLeakSection';
 import SolutionSection from '../components/ecommerce/SolutionSection';
@@ -19,12 +20,15 @@ import FAQSection from '../components/ecommerce/FAQSection';
 import FinalCTASection from '../components/ecommerce/FinalCTASection';
 
 const EcommerceAIPage: React.FC = () => {
-  useEffect(() => {
-    document.title = 'Ecommerce AI Agent | Turn Browsers Into Buyers 24/7 | HookTXT';
-  }, []);
-
   return (
     <>
+      <SEO
+        title="Ecommerce AI Agent | Turn Browsers Into Buyers 24/7 | HookTXT"
+        description="Recover abandoned carts automatically with 72% success rate. AI agent that converts browsers into buyers, handles objections, and generates sales 24/7. Built for online stores. Stop losing revenue to cart abandonment."
+        canonicalUrl="https://hooktxt.com/ecommerce-ai-agent"
+        keywords="ecommerce AI, abandoned cart recovery, online store chatbot, e-commerce automation, sales AI, shopping cart AI, conversion optimization, retail AI"
+        ogImage="https://hooktxt.com/og-ecommerce-ai.jpg"
+      />
       <EcommerceHeroSection />
       <RevenueLeakSection />
       <SolutionSection />

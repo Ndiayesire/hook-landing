@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import SEO from '../components/common/SEO';
 import Section from '../components/common/Section';
 import Button from '../components/common/Button';
 import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
@@ -40,12 +41,15 @@ const ContactPage: React.FC = () => {
     }, 5000);
   };
 
-  useEffect(() => {
-    document.title = 'Contact | HookTXT';
-  }, []);
-
   return (
     <>
+      <SEO
+        title="Contact HookTXT | Schedule Your ROI Consultation"
+        description="Get in touch with HookTXT to discuss custom AI solutions for your business. Free consultation, no pressure. Discover how much revenue you're leaving on the table. Located in Sherbrooke, Quebec."
+        canonicalUrl="https://hooktxt.com/contact"
+        keywords="contact HookTXT, AI consultation, custom AI quote, business automation consultation, AI demo"
+        ogImage="https://hooktxt.com/og-contact.jpg"
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary to-accent2 text-white pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="container mx-auto px-4">

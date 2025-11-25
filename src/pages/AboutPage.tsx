@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import SEO from '../components/common/SEO';
 import Section from '../components/common/Section';
 import Button from '../components/common/Button';
 import { Heart, Target, Zap, Users } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
-  useEffect(() => {
-    document.title = 'About | HookTXT';
-  }, []);
-
   return (
     <>
+      <SEO
+        title="About HookTXT | The Story Behind AI That Actually Works"
+        description="Learn how HookTXT is revolutionizing business with custom multi-agent AI systems. Our mission: merge automation with results. Meet the team building AI that closes deals, not just chats."
+        canonicalUrl="https://hooktxt.com/about"
+        keywords="about HookTXT, AI company, conversational AI company, business automation, AI team, custom AI development"
+        ogImage="https://hooktxt.com/og-about.jpg"
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary to-accent2 text-white pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="container mx-auto px-4">
