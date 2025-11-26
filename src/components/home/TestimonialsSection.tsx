@@ -1,36 +1,36 @@
 /**
- * TestimonialsSection Component - Premium Dan Martell Style
+ * TestimonialsSection Component - Mia.inc Minimal Style
  *
- * Authentic testimonials with client context.
- * Premium design with real photos and business details.
+ * Clean testimonials with minimal design.
+ * Simple client logos and quotes.
  */
 
 import React from 'react';
 import Section from '../common/Section';
 import TestimonialCarousel from './TestimonialCarousel';
-import { Star } from 'lucide-react';
 
 const TestimonialsSection: React.FC = () => {
   return (
     <Section background="white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full mb-6">
-            <Star className="h-4 w-4 text-secondary fill-current" />
-            <span className="text-sm font-medium text-secondary">Client Success Stories</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-secondary">
             Trusted by Growing Businesses
           </h2>
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Here is what business owners say about working with us.
+          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto">
+            Here's what business owners say about working with us.
           </p>
         </div>
 
+        {/* Testimonials Carousel */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <TestimonialCarousel />
+        </div>
+
         {/* Client Logos */}
-        <div className="flex justify-center mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-50">
             {[
               {
                 src: "https://tourismebrome-missisquoi.ca/app/themes/baserock/assets/img/logo_tourisme-cantons-de-lest-fr-v2.png",
@@ -59,21 +59,16 @@ const TestimonialsSection: React.FC = () => {
             ].map((logo, index) => (
               <div
                 key={index}
-                className="bg-white p-4 rounded-2xl w-36 h-24 flex items-center justify-center border border-neutral-100 shadow-sm grayscale hover:grayscale-0 hover:shadow-card transition-all duration-300"
+                className="h-16 flex items-center justify-center grayscale"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-full w-full object-contain"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Testimonials Carousel */}
-        <div className="max-w-5xl mx-auto">
-          <TestimonialCarousel />
         </div>
       </div>
     </Section>
