@@ -1,93 +1,80 @@
 /**
- * EcommerceHeroSection Component
+ * EcommerceHeroSection Component - Mia.inc Minimal Style
  *
- * Hero section for the Ecommerce AI Agent landing page.
- * Displays the main value proposition with dramatic headline about visitors
- * leaving money on the table, includes dual CTAs and trust badges.
+ * Clean, minimal hero section for E-commerce AI page.
+ * Focus on whitespace, bold typography, and clarity.
  */
 
 import React from 'react';
 import Button from '../common/Button';
-import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
+import { ArrowRight, ShoppingCart } from 'lucide-react';
 
 const EcommerceHeroSection: React.FC = () => {
   return (
-    <div className="bg-gradient-to-br from-primary via-accent2 to-primary text-white pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="container mx-auto px-4">
+    <div className="relative bg-white pt-32 pb-32 md:pt-48 md:pb-48">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in leading-tight">
-            Your Website Visitors Are <span className="text-secondary">Leaving Money On The Table</span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-secondary leading-[1.1] mb-8 tracking-tight">
+            Turn Browsers
+            <br />
+            Into
+            <br />
+            <span className="text-primary">Buyers</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl mb-6 text-gray-100 animate-slide-up max-w-4xl mx-auto leading-relaxed">
-            Turn Curious Browsers Into Paying Customers — Automatically, 24/7
+          <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-3xl mx-auto mb-12 font-normal">
+            AI Sales Agent that answers questions, handles objections, and closes sales automatically. 24/7.
           </p>
-
-          {/* Value Proposition */}
-          <p className="text-lg md:text-xl mb-10 text-gray-100 font-medium animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Introducing the <span className="text-secondary font-bold">AI Sales Agent</span>: The intelligent chatbot that qualifies leads, handles objections, and closes sales while you sleep.
-          </p>
-
-          {/* Problems and Solutions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 text-left max-w-4xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            {/* Problems Column */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <h3 className="text-lg font-bold mb-4 text-error-light">Stop losing revenue to:</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-5 w-5 text-error-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Unanswered questions at 2 AM</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-5 w-5 text-error-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Leads leaving for competitors</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-5 w-5 text-error-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Generic chatbots that frustrate customers</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-5 w-5 text-error-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Overwhelmed support teams</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Solutions Column */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <h3 className="text-lg font-bold mb-4 text-success-light">Start capturing every dollar with:</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-success-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">A trained AI salesperson that never sleeps</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-success-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Lead qualification in real-time</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-success-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Proven closing techniques, every conversation</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-success-light flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-100">Tracked ROI down to the penny</span>
-                </li>
-              </ul>
-            </div>
-          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            <Button to="/demo" variant="secondary" size="lg" className="flex items-center justify-center shadow-lg hover:shadow-xl">
-              Book Your Strategy Call
-              <ArrowRight className="ml-2 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <Button
+              to="/contact"
+              variant="primary"
+              size="lg"
+              className="group bg-primary hover:bg-primary-dark text-white font-semibold text-lg px-10 py-5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2"
+            >
+              Stop Losing Sales Today
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button to="/demo" variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-primary shadow-lg hover:shadow-xl">
-              See It In Action
+            <Button
+              to="#how-it-works"
+              variant="outline"
+              size="lg"
+              className="text-secondary border-2 border-neutral-200 hover:border-primary font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300"
+            >
+              See How It Works
             </Button>
+          </div>
+
+          {/* Trust Indicator */}
+          <div className="flex items-center justify-center gap-2 text-neutral-500">
+            <ShoppingCart className="h-5 w-5" />
+            <p className="text-base font-medium">
+              72% Cart Recovery Success Rate
+            </p>
+          </div>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mt-24">
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">72%</div>
+            <p className="text-neutral-600 font-medium">Cart recovery rate</p>
+          </div>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">24/7</div>
+            <p className="text-neutral-600 font-medium">Always available</p>
+          </div>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">3x</div>
+            <p className="text-neutral-600 font-medium">Conversion increase</p>
+          </div>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">100%</div>
+            <p className="text-neutral-600 font-medium">Questions answered</p>
           </div>
         </div>
       </div>
