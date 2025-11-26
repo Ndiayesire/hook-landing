@@ -5,19 +5,19 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0A2463',
-          dark: '#061840',
-          light: '#0E3380',
+          DEFAULT: '#4D65FF',
+          dark: '#3A4FCC',
+          light: '#6B7FFF',
         },
         secondary: {
-          DEFAULT: '#7FB069',
-          dark: '#6A9456',
-          light: '#95C17D',
+          DEFAULT: '#1A1A1A',
+          dark: '#000000',
+          light: '#404040',
         },
         accent1: {
-          DEFAULT: '#F77F00',
-          dark: '#D66D00',
-          light: '#FF9419',
+          DEFAULT: '#4D65FF',
+          dark: '#3A4FCC',
+          light: '#6B7FFF',
         },
         accent2: {
           DEFAULT: '#4C6A65',
@@ -58,15 +58,15 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Garet', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 2px 10px rgba(10, 36, 99, 0.05)',
-        'medium': '0 4px 20px rgba(10, 36, 99, 0.08)',
-        'large': '0 10px 40px rgba(10, 36, 99, 0.12)',
-        'sm': '0 1px 3px rgba(10, 36, 99, 0.04)',
-        'card': '0 2px 8px rgba(10, 36, 99, 0.06)',
-        'hover': '0 8px 24px rgba(10, 36, 99, 0.10)',
+        'soft': '0 1px 3px rgba(0, 0, 0, 0.04)',
+        'medium': '0 2px 8px rgba(0, 0, 0, 0.06)',
+        'large': '0 4px 16px rgba(0, 0, 0, 0.08)',
+        'sm': '0 1px 2px rgba(0, 0, 0, 0.03)',
+        'card': '0 1px 3px rgba(0, 0, 0, 0.05)',
+        'hover': '0 4px 12px rgba(0, 0, 0, 0.08)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
