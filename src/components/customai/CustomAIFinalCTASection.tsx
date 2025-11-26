@@ -14,7 +14,7 @@ const CustomAIFinalCTASection: React.FC = () => {
     <div className="bg-primary text-white py-32 md:py-48">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             Ready to Build Your
             <br />
             Custom AI System?

@@ -15,7 +15,7 @@ const CtaSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main CTA Message */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             Ready to Scale Your
             <br />
             Customer Conversations?
