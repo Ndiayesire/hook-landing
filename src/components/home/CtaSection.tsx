@@ -1,104 +1,113 @@
 /**
- * CtaSection Component
+ * CtaSection Component - Dan Martell Helpful CTA
  *
- * Final aggressive call-to-action section for the home page.
- * Emphasizes urgency and competitive advantage.
+ * Warm, inviting final CTA without pressure or fear.
+ * Focus on helping, not closing.
  */
 
 import React from 'react';
-import { ArrowRight, Brain, Car, ShoppingCart } from 'lucide-react';
+import { ArrowRight, Calendar, MessageCircle } from 'lucide-react';
 import Button from '../common/Button';
 
 const CtaSection: React.FC = () => {
   return (
-    <div className="bg-gradient-to-br from-primary via-accent2 to-primary text-white py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+    <div className="relative bg-gradient-to-br from-primary via-primary-dark to-secondary text-white py-24 md:py-32 overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-5xl mx-auto">
           {/* Main CTA Message */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Stop Losing Revenue. <br />
-              <span className="text-secondary">Start Capturing Leads 24/7.</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Ready to Scale Your <br />
+              <span className="text-secondary">Customer Conversations?</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-100 mb-6 max-w-3xl mx-auto leading-relaxed">
-              Your competitors are already using AI. The question is: Are they using AI that works?
-            </p>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-              Schedule a consultation and we'll show you exactly how much revenue you're leaving on the table.
+            <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
+              Let us show you what is possible when AI is built specifically for your business.
             </p>
           </div>
 
-          {/* Quick Links to Products */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all group">
-              <div className="flex items-center gap-3 mb-3">
-                <Brain className="h-8 w-8 text-secondary group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold">Custom AI</h3>
+          {/* CTA Options */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+            {/* Primary CTA */}
+            <div className="bg-white text-neutral-900 rounded-3xl p-8 shadow-large">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-primary/10 rounded-2xl">
+                  <Calendar className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Book a Strategy Call</h3>
               </div>
-              <p className="text-gray-200 text-sm mb-4">For any business type</p>
-              <Button to="/custom-ai-systems" variant="secondary" size="sm" className="w-full">
-                Learn More
+              <p className="text-neutral-600 mb-6 leading-relaxed">
+                30-minute conversation to understand your business and explore if AI makes sense for you.
+              </p>
+              <ul className="space-y-2 mb-6">
+                {[
+                  'No sales pitch',
+                  'Free consultation',
+                  'Honest recommendations'
+                ].map((point, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-sm text-neutral-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></div>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button to="/contact" variant="primary" className="w-full group">
+                Schedule Your Call
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-secondary hover:bg-white/20 transition-all group">
-              <div className="flex items-center gap-3 mb-3">
-                <Car className="h-8 w-8 text-secondary group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold">Dealership AI</h3>
+            {/* Secondary CTA */}
+            <div className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-3xl p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-white/10 rounded-2xl">
+                  <MessageCircle className="h-6 w-6 text-secondary" />
+                </div>
+                <h3 className="text-2xl font-bold">Explore Solutions</h3>
               </div>
-              <p className="text-gray-200 text-sm mb-4">For auto dealerships</p>
-              <Button to="/dealership-ai" variant="secondary" size="sm" className="w-full">
-                Learn More
-              </Button>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all group">
-              <div className="flex items-center gap-3 mb-3">
-                <ShoppingCart className="h-8 w-8 text-secondary group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold">Ecommerce AI</h3>
+              <p className="text-white/80 mb-6 leading-relaxed">
+                Learn more about our three specialized AI systems and which might fit your business.
+              </p>
+              <div className="space-y-3">
+                <Button to="/custom-ai-systems" variant="outline" className="w-full border-white/30 hover:bg-white hover:text-primary transition-colors text-white">
+                  Custom AI Systems
+                </Button>
+                <Button to="/dealership-ai" variant="outline" className="w-full border-white/30 hover:bg-white hover:text-primary transition-colors text-white">
+                  Dealership AI
+                </Button>
+                <Button to="/ecommerce-ai-agent" variant="outline" className="w-full border-white/30 hover:bg-white hover:text-primary transition-colors text-white">
+                  E-commerce AI
+                </Button>
               </div>
-              <p className="text-gray-200 text-sm mb-4">For online stores</p>
-              <Button to="/ecommerce-ai-agent" variant="secondary" size="sm" className="w-full">
-                Learn More
-              </Button>
             </div>
           </div>
 
-          {/* Main CTA Button */}
-          <div className="text-center mb-10">
-            <Button
-              to="/contact"
-              variant="secondary"
-              size="xl"
-              className="text-lg px-12 py-4 hover:scale-105 transition-all duration-300 shadow-2xl"
-            >
-              Schedule Your ROI Consultation
-              <ArrowRight className="ml-2 h-6 w-6" />
-            </Button>
-            <p className="mt-6 text-gray-200">
-              Free consultation. No pressure. Just honest advice about what AI can do for YOUR business.
+          {/* Trust Statement */}
+          <div className="text-center">
+            <p className="text-lg text-white/80 mb-6 max-w-2xl mx-auto">
+              Join businesses generating $150K-$500K+ in additional revenue through intelligent customer conversations.
             </p>
-          </div>
-
-          {/* Urgency Statement */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center">
-            <p className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Every Day You Wait Is Revenue Lost
-            </p>
-            <p className="text-lg text-gray-200 mb-4">
-              While you're reading this, your competitors are capturing after-hours leads.
-            </p>
-            <p className="text-xl font-bold text-secondary">
-              Not tomorrow. Not next month. NOW.
-            </p>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-white/70">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span>No long-term contracts</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span>Custom-built for you</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span>Transparent pricing</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -left-20 bottom-0 w-64 h-64 rounded-full bg-secondary opacity-10 blur-3xl"></div>
-        <div className="absolute -right-20 top-0 w-64 h-64 rounded-full bg-accent2 opacity-10 blur-3xl"></div>
+        <div className="absolute -left-20 bottom-0 w-96 h-96 rounded-full bg-secondary/20 blur-3xl"></div>
+        <div className="absolute -right-20 top-0 w-96 h-96 rounded-full bg-primary-light/20 blur-3xl"></div>
       </div>
     </div>
   );

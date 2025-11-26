@@ -1,206 +1,246 @@
 /**
- * HomeHowItWorksSection Component
+ * HomeHowItWorksSection Component - Dan Martell Framework Approach
  *
- * Explains HookTXT's multi-agent approach and how the systems work
- * to generate revenue 24/7.
+ * Clear 4-step framework explaining the process.
+ * Educational and transparent, showing methodology.
  */
 
 import React from 'react';
-import { Wrench, Zap, TrendingUp, ArrowRight } from 'lucide-react';
+import { Search, Users, Zap, BarChart3, ArrowRight } from 'lucide-react';
 
 const HomeHowItWorksSection: React.FC = () => {
   return (
-    <div className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-accent2/5">
+    <div className="py-24 md:py-32 bg-gradient-to-b from-neutral-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-              How It Works
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <span className="text-sm font-medium text-primary">Our Process</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900">
+              The 4-Step System
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              From custom build to measurable results. Our proven 3-step process turns AI into revenue.
+            <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              A proven framework for building AI systems that actually drive results.
             </p>
           </div>
 
-          {/* 3 Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Step 1 */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full border-2 border-primary/20 hover:border-primary transition-all">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="bg-primary rounded-full w-16 h-16 flex items-center justify-center text-white text-2xl font-bold">
-                    1
+          {/* Timeline Steps */}
+          <div className="relative">
+            {/* Connecting Line - Desktop Only */}
+            <div className="hidden lg:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent1 opacity-20"></div>
+
+            {/* Steps Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+              {/* Step 1 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-card border border-neutral-100 hover:shadow-hover hover:border-primary/30 transition-all duration-300 h-full">
+                  {/* Step Number Badge */}
+                  <div className="relative inline-flex mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-2xl w-16 h-16 flex items-center justify-center text-white text-2xl font-bold shadow-card">
+                      1
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 p-4 rounded-xl">
-                    <Wrench className="h-10 w-10 text-primary" />
+                  <div className="mb-6">
+                    <div className="inline-flex p-4 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl">
+                      <Search className="h-8 w-8 text-primary" />
+                    </div>
                   </div>
+
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Discovery
+                  </h3>
+
+                  <p className="text-neutral-600 leading-relaxed mb-6">
+                    We learn your business inside and out. Your processes, your customers, your goals.
+                  </p>
+
+                  <ul className="space-y-2">
+                    {[
+                      'Business process audit',
+                      'Customer journey mapping',
+                      'System integration review',
+                      'Success metrics definition'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-neutral-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                  We Build Custom
-                </h3>
-
-                <p className="text-gray-700 mb-4 text-center leading-relaxed">
-                  Not off-the-shelf. Not templates. We build YOUR AI system from scratch.
-                </p>
-
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Deep-dive into your business processes</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Design multi-agent architecture</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Train on YOUR data and products</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Integrate with your existing systems</span>
-                  </li>
-                </ul>
               </div>
 
-              {/* Arrow */}
-              <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                <ArrowRight className="h-8 w-8 text-primary" />
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full border-2 border-primary/20 hover:border-primary transition-all">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="bg-primary rounded-full w-16 h-16 flex items-center justify-center text-white text-2xl font-bold">
-                    2
+              {/* Step 2 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-card border border-neutral-100 hover:shadow-hover hover:border-secondary/30 transition-all duration-300 h-full">
+                  <div className="relative inline-flex mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary to-secondary-dark rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-secondary to-secondary-dark rounded-2xl w-16 h-16 flex items-center justify-center text-white text-2xl font-bold shadow-card">
+                      2
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 p-4 rounded-xl">
-                    <Zap className="h-10 w-10 text-primary" />
+                  <div className="mb-6">
+                    <div className="inline-flex p-4 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl">
+                      <Users className="h-8 w-8 text-secondary" />
+                    </div>
                   </div>
+
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Architecture
+                  </h3>
+
+                  <p className="text-neutral-600 leading-relaxed mb-6">
+                    We design your multi-agent system. Specialized AI working together like a real team.
+                  </p>
+
+                  <ul className="space-y-2">
+                    {[
+                      'Agent role definition',
+                      'Workflow design',
+                      'Integration planning',
+                      'Training data preparation'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-neutral-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                  AI Works 24/7
-                </h3>
-
-                <p className="text-gray-700 mb-4 text-center leading-relaxed">
-                  Your multi-agent system captures, qualifies, and converts leads automatically.
-                </p>
-
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Engages visitors instantly (2 seconds)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Answers specific questions about YOUR business</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Qualifies leads intelligently</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Books appointments or closes sales</span>
-                  </li>
-                </ul>
               </div>
 
-              {/* Arrow */}
-              <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
-                <ArrowRight className="h-8 w-8 text-primary" />
+              {/* Step 3 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-card border border-neutral-100 hover:shadow-hover hover:border-accent1/30 transition-all duration-300 h-full">
+                  <div className="relative inline-flex mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent1 to-accent1-dark rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-accent1 to-accent1-dark rounded-2xl w-16 h-16 flex items-center justify-center text-white text-2xl font-bold shadow-card">
+                      3
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <div className="inline-flex p-4 bg-gradient-to-br from-accent1/10 to-accent1/5 rounded-2xl">
+                      <Zap className="h-8 w-8 text-accent1" />
+                    </div>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Implementation
+                  </h3>
+
+                  <p className="text-neutral-600 leading-relaxed mb-6">
+                    We build, train, and deploy your system. Integrated with your existing tools.
+                  </p>
+
+                  <ul className="space-y-2">
+                    {[
+                      'Custom AI development',
+                      'System integration',
+                      'Rigorous testing',
+                      'Team training'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-neutral-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent1 mt-2 flex-shrink-0"></div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            {/* Step 3 */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full border-2 border-primary/20 hover:border-primary transition-all">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="bg-primary rounded-full w-16 h-16 flex items-center justify-center text-white text-2xl font-bold">
-                    3
+              {/* Step 4 */}
+              <div className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-card border border-neutral-100 hover:shadow-hover hover:border-primary/30 transition-all duration-300 h-full">
+                  <div className="relative inline-flex mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-primary to-secondary rounded-2xl w-16 h-16 flex items-center justify-center text-white text-2xl font-bold shadow-card">
+                      4
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 p-4 rounded-xl">
-                    <TrendingUp className="h-10 w-10 text-primary" />
+                  <div className="mb-6">
+                    <div className="inline-flex p-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl">
+                      <BarChart3 className="h-8 w-8 text-primary" />
+                    </div>
                   </div>
+
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                    Optimization
+                  </h3>
+
+                  <p className="text-neutral-600 leading-relaxed mb-6">
+                    We monitor, measure, and continuously improve your system for maximum ROI.
+                  </p>
+
+                  <ul className="space-y-2">
+                    {[
+                      'Performance monitoring',
+                      'A/B testing',
+                      'Continuous refinement',
+                      'Monthly strategy calls'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-neutral-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                  You Get Results
-                </h3>
-
-                <p className="text-gray-700 mb-4 text-center leading-relaxed">
-                  Real-time dashboard shows every conversation, lead, and dollar generated.
-                </p>
-
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Live conversation monitoring</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Lead scoring and prioritization</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Revenue tracking and ROI metrics</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary text-lg mt-0.5">•</span>
-                    <span className="text-gray-700">Continuous optimization and improvement</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
 
-          {/* Multi-Agent Advantage */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-2 border-primary/20">
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                The Multi-Agent Advantage
-              </h3>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Unlike generic chatbots with one AI brain trying to do everything, our systems use <span className="font-bold text-primary">specialized agents</span> that work together like a real team.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-                  <p className="font-bold text-primary text-lg mb-2">Agent 1</p>
-                  <p className="text-gray-700 font-semibold mb-1">The Router</p>
-                  <p className="text-gray-600 text-sm">Understands intent, routes to specialist</p>
-                </div>
-
-                <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-                  <p className="font-bold text-primary text-lg mb-2">Agent 2</p>
-                  <p className="text-gray-700 font-semibold mb-1">The Specialist</p>
-                  <p className="text-gray-600 text-sm">Deep knowledge, handles complex questions</p>
-                </div>
-
-                <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-                  <p className="font-bold text-primary text-lg mb-2">Agent 3</p>
-                  <p className="text-gray-700 font-semibold mb-1">The Closer</p>
-                  <p className="text-gray-600 text-sm">Qualifies, converts, books appointments</p>
-                </div>
+          {/* Multi-Agent Explanation */}
+          <div className="mt-20 bg-gradient-to-br from-white to-neutral-50 rounded-3xl shadow-large border border-neutral-100 p-10 md:p-12">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                  Why Multi-Agent Systems Work Better
+                </h3>
+                <p className="text-lg text-neutral-600 leading-relaxed">
+                  Think of it like a company. You would not hire one person to do sales, support, and operations.
+                  Why would you ask one AI to handle everything?
+                </p>
               </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-primary/10 to-accent2/10 rounded-xl border border-primary/20">
-                <p className="text-gray-800 font-bold text-lg">
-                  Result: Higher quality conversations. Better lead qualification. More revenue.
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  {
+                    title: 'The Router',
+                    role: 'First Contact',
+                    description: 'Understands visitor intent and routes to the right specialist instantly.'
+                  },
+                  {
+                    title: 'The Specialist',
+                    role: 'Expert Knowledge',
+                    description: 'Deep expertise in your products, services, and industry to answer any question.'
+                  },
+                  {
+                    title: 'The Qualifier',
+                    role: 'Lead Conversion',
+                    description: 'Scores leads, identifies hot prospects, and moves them to action.'
+                  }
+                ].map((agent, index) => (
+                  <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-neutral-100">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl flex items-center justify-center mb-4">
+                      <span className="text-primary font-bold text-lg">{index + 1}</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-neutral-900 mb-1">{agent.title}</h4>
+                    <p className="text-sm font-medium text-secondary mb-3">{agent.role}</p>
+                    <p className="text-neutral-600 text-sm leading-relaxed">{agent.description}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border border-primary/10 p-6 text-center">
+                <p className="text-lg font-semibold text-neutral-900">
+                  Each agent excels at their role. Together, they create exceptional experiences.
                 </p>
               </div>
             </div>
