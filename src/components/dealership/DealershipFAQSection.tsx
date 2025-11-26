@@ -1,8 +1,7 @@
 /**
- * DealershipFAQSection Component
+ * DealershipFAQSection Component - Mia.inc Minimal Style
  *
- * FAQ section addressing common questions about dealership AI implementation.
- * Setup time, integration, specific scenarios, and technical details.
+ * Clean FAQ section.
  */
 
 import React, { useState } from 'react';
@@ -12,27 +11,27 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 interface FAQItemProps {
   question: string;
   answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle }) => {
   return (
-    <div className="bg-white rounded-xl shadow-soft overflow-hidden">
+    <div className="bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+        onClick={onToggle}
+        className="w-full flex items-center justify-between p-8 text-left hover:bg-neutral-50 transition-colors"
       >
-        <span className="font-semibold text-gray-800 pr-4">{question}</span>
+        <span className="font-bold text-secondary text-lg pr-4">{question}</span>
         {isOpen ? (
-          <ChevronUp className="h-5 w-5 text-primary flex-shrink-0" />
+          <ChevronUp className="h-6 w-6 text-primary flex-shrink-0" />
         ) : (
-          <ChevronDown className="h-5 w-5 text-primary flex-shrink-0" />
+          <ChevronDown className="h-6 w-6 text-primary flex-shrink-0" />
         )}
       </button>
       {isOpen && (
-        <div className="px-6 pb-5 text-gray-700">
-          {answer}
+        <div className="px-8 pb-8 border-t border-neutral-200">
+          <p className="text-neutral-700 leading-relaxed pt-6">{answer}</p>
         </div>
       )}
     </div>
@@ -40,89 +39,65 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 };
 
 const DealershipFAQSection: React.FC = () => {
-  const faqs: FAQItemProps[] = [
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const faqs = [
     {
-      question: "How long does it take to set up the system?",
-      answer: "Typically 2-4 weeks from kickoff to live operation. This includes: Week 1-2: Discovery, system design, and integration planning. Week 3-4: Development, DMS integration, agent training and testing. Week 5-6: Team training, launch, and monitoring. Week 7-8: Optimization and fine-tuning. You'll start capturing leads within 4-6 weeks."
+      question: "How long does setup take?",
+      answer: "Typically 2-4 weeks from kickoff to live operation, including DMS integration, agent training, and team onboarding. You'll start capturing leads within a month."
     },
     {
-      question: "How does it integrate with my existing DMS?",
-      answer: "We connect directly to your DMS system to pull real-time inventory data. Our system supports all major DMS platforms (CDK, Reynolds & Reynolds, Dealertrack, etc.). We handle all the technical integration - you just need to provide API access. Your inventory, pricing, and vehicle details sync automatically in real-time."
+      question: "How does it integrate with my DMS?",
+      answer: "We connect directly to your DMS system (CDK, Reynolds & Reynolds, Dealertrack, etc.) to pull real-time inventory data. All technical integration is handled by our team."
     },
     {
       question: "What if a customer asks something the AI doesn't know?",
-      answer: "The system is designed to handle edge cases intelligently. For questions outside its knowledge: It acknowledges the question professionally. It captures the lead's contact info. It promises a callback from a human specialist. It notifies your team immediately. The AI never makes up answers - it's trained to be honest and helpful."
+      answer: "The system acknowledges the question, captures the lead's contact info, and notifies your team immediately. It never makes up answers."
     },
     {
-      question: "Can it handle trade-ins and financing questions?",
-      answer: "Yes! The AI can: Capture trade-in details (year, make, model, mileage, condition). Provide general financing information. Explain your current promotions and offers. Route to the finance department for detailed quotes. The goal is to QUALIFY and CAPTURE - your finance team closes the details."
-    },
-    {
-      question: "What happens to leads scored as 1 or 2?",
-      answer: "Score 1 (Service): Automatically routed to service department. Captured for service follow-up. No sales team time wasted. Score 2 (Just Browsing): Captured in database for nurturing. Added to email follow-up sequence. Re-engaged when they return. Not pushed to sales team until score increases. This prevents your closers from wasting time on tire-kickers."
+      question: "Can it handle trade-ins and financing?",
+      answer: "Yes, the AI captures trade-in details, provides general financing information, and routes to your finance department for detailed quotes."
     },
     {
       question: "How accurate is the lead scoring?",
-      answer: "Our BANT-based scoring system is highly accurate because it analyzes: Budget indicators from conversation. Authority signals (decision-maker or not). Need urgency and specific requirements. Timeline for purchase. The system improves over time by learning from your actual conversions. Typical accuracy: 85%+ for hot leads (Score 4-5)."
-    },
-    {
-      question: "What if my inventory changes constantly?",
-      answer: "That's exactly what the system is built for! Real-time sync with your DMS. Inventory updates reflect instantly. Vehicles marked as sold disappear from suggestions. New arrivals appear immediately. No manual updates needed - it's all automatic."
-    },
-    {
-      question: "Can it handle multiple locations?",
-      answer: "Absolutely! The system can: Manage inventory across multiple locations. Route leads to the correct dealership. Handle location-specific promotions. Provide location-aware responses. Each location gets its own dashboard view while you see the full picture."
+      answer: "Our BANT-based scoring system is typically 85%+ accurate for identifying hot leads (Score 4-5). The system improves over time by learning from actual conversions."
     },
     {
       question: "Is it bilingual?",
-      answer: "Yes - seamless English/French support. The AI detects language automatically. Switches mid-conversation if needed. Maintains professional tone in both languages. Perfect for Quebec and bilingual markets."
+      answer: "Yes, seamless English/French support. The AI detects language automatically and switches mid-conversation if needed. Perfect for Quebec and bilingual markets."
     },
     {
       question: "What kind of support do we get?",
-      answer: "Comprehensive ongoing support: Priority support channel (email/chat). 4-hour response time for issues. Monthly performance reviews. Quarterly strategy sessions. Continuous AI optimization. Regular updates and improvements. Dedicated account manager (Enterprise). You're never left in the dark."
+      answer: "Priority support with 4-hour response time, monthly performance reviews, quarterly strategy sessions, continuous optimization, and a dedicated account manager."
     },
     {
       question: "How much does it cost?",
-      answer: "Pricing is customized based on: Dealership size and volume. Number of locations. Integration complexity. Specific requirements. Typical ROI: 8-12X in year one. Most dealerships see $300K-$500K in additional annual revenue. Schedule a consultation for your custom quote and ROI calculation."
-    },
-    {
-      question: "Can we test it before committing?",
-      answer: "We offer: Custom demo with YOUR inventory data. Live conversation examples. ROI calculation for your specific dealership. Trial period available for qualified dealerships. Contact us to schedule a demo and see it in action with your real data."
+      answer: "Pricing is customized based on dealership size, volume, and requirements. Typical ROI is 8-12X in year one. Schedule a consultation for your custom quote."
     }
   ];
 
   return (
-    <Section background="white">
+    <Section background="light">
       <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-primary">
-            Frequently Asked <span className="text-accent2">Questions</span>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-secondary">
+            Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-700">
-            Everything you need to know about HookTXT Dealership AI
+          <p className="text-xl md:text-2xl text-neutral-600">
+            Everything you need to know about Dealership AI.
           </p>
         </div>
 
-        {/* FAQ List */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            />
           ))}
-        </div>
-
-        {/* Still Have Questions CTA */}
-        <div className="mt-12 bg-gradient-to-br from-primary/10 to-accent2/10 rounded-2xl p-8 text-center border-2 border-primary/20">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Still Have Questions?</h3>
-          <p className="text-gray-700 mb-6">
-            We're here to help. Schedule a call and we'll answer everything.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg transition-colors"
-          >
-            Talk to Our Team
-          </a>
         </div>
       </div>
     </Section>

@@ -1,174 +1,81 @@
 /**
- * DealershipAIHeroSection Component
+ * DealershipAIHeroSection Component - Mia.inc Minimal Style
  *
- * Hero section for Dealership AI page.
- * Aggressive hook about losing leads at 2 AM and after-hours shoppers.
- * Comparison between most dealerships and HookTXT solution.
+ * Clean, minimal hero section for Dealership AI page.
+ * Focus on whitespace, bold typography, and clarity.
  */
 
 import React from 'react';
 import Button from '../common/Button';
-import { Clock, TrendingDown, TrendingUp, Moon } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 
 const DealershipAIHeroSection: React.FC = () => {
   return (
-    <div className="bg-gradient-to-br from-primary via-accent2 to-primary text-white pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-        {/* Main Hero Content */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-            Dealership AI: Your 24/7 Sales Team <br />
-            <span className="text-secondary">That Never Sleeps</span>
+    <div className="relative bg-white pt-32 pb-32 md:pt-48 md:pb-48">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Main Headline */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-secondary leading-[1.1] mb-8 tracking-tight">
+            Your 24/7
+            <br />
+            Dealership
+            <br />
+            <span className="text-primary">Sales Team</span>
           </h1>
-          <p className="text-2xl md:text-3xl text-gray-100 mb-8 font-semibold">
-            Stop Losing Leads at 2 AM. Start Closing Deals While You Sleep.
+
+          {/* Subheadline */}
+          <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-3xl mx-auto mb-12 font-normal">
+            Capture leads at 2 AM. Answer questions instantly. Qualify buyers automatically. Never lose another after-hours customer.
           </p>
-        </div>
 
-        {/* The Problem Statement */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 mb-12 border border-white/20">
-          <h2 className="text-3xl font-bold text-secondary mb-6">LET ME ASK YOU SOMETHING.</h2>
-          <div className="space-y-4 text-lg text-white">
-            <div>
-              <p className="font-semibold mb-2">How many leads walked into your showroom at 9 PM last night?</p>
-              <p className="text-4xl font-bold text-error">ZERO.</p>
-            </div>
-            <div className="mt-6">
-              <p className="font-semibold mb-2">How many people were on your website at 9 PM researching vehicles?</p>
-              <p className="text-4xl font-bold text-secondary">Probably 15-20.</p>
-            </div>
-            <div className="mt-6">
-              <p className="font-semibold mb-2">And what did your website do for them?</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-100 mt-4">
-                <li>Showed them a phone number.</li>
-                <li>Told them to "contact us during business hours."</li>
-                <li className="text-error font-bold">Let them walk straight to your competitor.</li>
-              </ul>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <Button
+              to="/contact"
+              variant="primary"
+              size="lg"
+              className="group bg-primary hover:bg-primary-dark text-white font-semibold text-lg px-10 py-5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2"
+            >
+              Stop Losing Leads Today
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button
+              to="#how-it-works"
+              variant="outline"
+              size="lg"
+              className="text-secondary border-2 border-neutral-200 hover:border-primary font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300"
+            >
+              See How It Works
+            </Button>
+          </div>
+
+          {/* Trust Indicator */}
+          <div className="flex items-center justify-center gap-2 text-neutral-500">
+            <Clock className="h-5 w-5" />
+            <p className="text-base font-medium">
+              24/7 Operation. Zero Missed Leads.
+            </p>
           </div>
         </div>
 
-        {/* The Brutal Truth */}
-        <div className="bg-gradient-to-br from-error/20 to-error/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 mb-12 border border-error/30">
-          <div className="flex items-center gap-3 mb-6">
-            <Moon className="h-10 w-10 text-secondary" />
-            <h2 className="text-3xl font-bold text-white">While You're Sleeping, Your Competitors Are Selling</h2>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mt-24">
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">63%</div>
+            <p className="text-neutral-600 font-medium">Research after hours</p>
           </div>
-          <p className="text-xl text-white mb-6 font-semibold">Here's the brutal truth:</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-4xl font-bold text-secondary mb-2">63%</div>
-              <p className="text-white">of car shoppers research online between 8 PM and midnight</p>
-            </div>
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-4xl font-bold text-secondary mb-2">18</div>
-              <p className="text-white">websites visited by average shopper before making a decision</p>
-            </div>
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-4xl font-bold text-secondary mb-2">NOW</div>
-              <p className="text-white">They're ready to buy - not during your business hours</p>
-            </div>
-            <div className="bg-white/10 rounded-xl p-6">
-              <div className="text-4xl font-bold text-secondary mb-2">82%</div>
-              <p className="text-white">won't call - they want instant answers</p>
-            </div>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">82%</div>
+            <p className="text-neutral-600 font-medium">Want instant answers</p>
           </div>
-        </div>
-
-        {/* The Comparison */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Most Dealerships */}
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            <div className="flex items-center gap-3 mb-6">
-              <TrendingDown className="h-8 w-8 text-error" />
-              <h3 className="text-2xl font-bold text-gray-800">Most Dealerships</h3>
-            </div>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-error">❌</span>
-                <div>
-                  <p className="font-semibold text-gray-800">Generic chatbot:</p>
-                  <p className="text-gray-600">"Sorry, our team is offline"</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-error">❌</span>
-                <div>
-                  <p className="font-semibold text-gray-800">Contact form</p>
-                  <p className="text-gray-600">Sits unanswered until 9 AM</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-error">❌</span>
-                <div>
-                  <p className="font-semibold text-gray-800">Customer moves</p>
-                  <p className="text-gray-600">To the next dealership</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-3xl text-error font-bold">❌</span>
-                <div>
-                  <p className="text-xl font-bold text-error">LEAD LOST</p>
-                </div>
-              </li>
-            </ul>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">24/7</div>
+            <p className="text-neutral-600 font-medium">Always available</p>
           </div>
-
-          {/* HookTXT Dealership AI */}
-          <div className="bg-gradient-to-br from-primary to-accent2 rounded-2xl p-8 shadow-2xl text-white">
-            <div className="flex items-center gap-3 mb-6">
-              <TrendingUp className="h-8 w-8 text-secondary" />
-              <h3 className="text-2xl font-bold">HookTXT Dealership AI</h3>
-            </div>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-secondary">✅</span>
-                <div>
-                  <p className="font-semibold">Intelligent conversation</p>
-                  <p className="text-gray-100">Within 2 seconds</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-secondary">✅</span>
-                <div>
-                  <p className="font-semibold">Answers specific questions</p>
-                  <p className="text-gray-100">About YOUR inventory</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-secondary">✅</span>
-                <div>
-                  <p className="font-semibold">Qualifies the lead</p>
-                  <p className="text-gray-100">Automatically</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl text-secondary">✅</span>
-                <div>
-                  <p className="font-semibold">Books the appointment</p>
-                  <p className="text-gray-100">Ready for your sales team</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-3xl text-secondary font-bold">✅</span>
-                <div>
-                  <p className="text-xl font-bold text-secondary">LEAD CAPTURED</p>
-                </div>
-              </li>
-            </ul>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">100%</div>
+            <p className="text-neutral-600 font-medium">Leads captured</p>
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button to="/contact" variant="secondary" size="xl" className="text-lg px-12">
-            Stop Losing Leads Today
-          </Button>
-          <p className="mt-6 text-white text-lg">
-            Your customers are online right now. Are you capturing them?
-          </p>
-        </div>
         </div>
       </div>
     </div>
