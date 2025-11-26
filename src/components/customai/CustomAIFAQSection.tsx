@@ -19,22 +19,22 @@ interface FAQItemProps {
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle }) => {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-sm transition-all">
+    <div className="bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-6 text-left"
+        className="w-full flex items-center justify-between p-8 text-left hover:bg-neutral-50 transition-colors"
       >
-        <span className="font-bold text-gray-800 pr-4">{question}</span>
+        <span className="font-bold text-secondary text-lg pr-4">{question}</span>
         {isOpen ? (
-          <ChevronUp className="h-5 w-5 text-primary flex-shrink-0" />
+          <ChevronUp className="h-6 w-6 text-primary flex-shrink-0" />
         ) : (
-          <ChevronDown className="h-5 w-5 text-primary flex-shrink-0" />
+          <ChevronDown className="h-6 w-6 text-primary flex-shrink-0" />
         )}
       </button>
       {isOpen && (
-        <div className="px-6 pb-6">
+        <div className="px-8 pb-8 border-t border-neutral-200">
           <div
-            className="text-gray-700 leading-relaxed space-y-3"
+            className="text-neutral-700 leading-relaxed space-y-3 pt-6"
             dangerouslySetInnerHTML={{ __html: answer }}
           />
         </div>
@@ -180,12 +180,12 @@ const CustomAIFAQSection: React.FC = () => {
   return (
     <Section background="white">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-primary">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-secondary">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-700">
-            Everything you need to know about Custom AI Systems & Dashboards
+          <p className="text-xl md:text-2xl text-neutral-600">
+            Everything you need to know about Custom AI Systems
           </p>
         </div>
 
