@@ -1,162 +1,121 @@
 /**
- * HomeProblemSection Component
+ * HomeProblemSection Component - Dan Martell Educational Approach
  *
- * Explains the problem with generic AI chatbots and positions HookTXT
- * as the solution. Uses aggressive comparison messaging.
+ * Educational section explaining why most chatbots fail.
+ * Focus on understanding, not fear. Consultative and informative.
  */
 
 import React from 'react';
-import { XCircle, CheckCircle, Bot, Zap } from 'lucide-react';
+import { TrendingDown, Target, Users, Brain } from 'lucide-react';
 
 const HomeProblemSection: React.FC = () => {
   return (
-    <div className="py-16 md:py-24 bg-gray-50">
+    <div className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-              The Problem with <span className="text-error">Generic AI</span>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-100 rounded-full mb-6">
+              <span className="text-sm font-medium text-neutral-600">The Challenge</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900">
+              Why Most Chatbots{' '}
+              <span className="bg-gradient-to-r from-neutral-600 to-neutral-400 bg-clip-text text-transparent">
+                Don't Work
+              </span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
-              Your competitors are using AI that apologizes. We build AI that closes.
+            <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              It's not about the technology. It's about how it's implemented.
             </p>
           </div>
 
-          {/* Comparison Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Generic AI - Left Side */}
-            <div className="bg-white rounded-2xl p-8 border-2 border-error/30 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-error/10 p-3 rounded-xl">
-                  <Bot className="h-8 w-8 text-error" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Generic AI Chatbots</h3>
-                  <p className="text-error font-semibold">What Everyone Else Is Selling</p>
-                </div>
-              </div>
-
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-6 w-6 text-error flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">One-size-fits-all responses</p>
-                    <p className="text-gray-600 text-sm">"Sorry, I can't help with that"</p>
+          {/* The 4 Problems - Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+            {[
+              {
+                icon: TrendingDown,
+                title: 'Generic Responses',
+                description: 'Most chatbots use templated answers that do not understand your specific business context.',
+                insight: 'Your customers ask nuanced questions. They need specialized knowledge.'
+              },
+              {
+                icon: Target,
+                title: 'No Lead Qualification',
+                description: 'They collect contact info but cannot distinguish between tire-kickers and serious buyers.',
+                insight: 'Your sales team wastes time on unqualified leads.'
+              },
+              {
+                icon: Users,
+                title: 'Disconnected Systems',
+                description: 'Chatbots that do not integrate with your CRM, inventory, or existing tools create more work.',
+                insight: 'Data silos hurt efficiency and customer experience.'
+              },
+              {
+                icon: Brain,
+                title: 'Single-Agent Limitation',
+                description: 'One bot trying to do everything ends up doing nothing well.',
+                insight: 'Just like teams, AI needs specialized roles to excel.'
+              }
+            ].map((problem, index) => (
+              <div
+                key={index}
+                className="group bg-white border border-neutral-200 rounded-2xl p-8 hover:border-primary hover:shadow-card transition-all duration-300"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="p-3 bg-gradient-to-br from-neutral-100 to-neutral-50 rounded-2xl group-hover:from-primary/10 group-hover:to-secondary/10 transition-all">
+                    <problem.icon className="h-6 w-6 text-neutral-700 group-hover:text-primary transition-colors" />
                   </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-6 w-6 text-error flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">No real business knowledge</p>
-                    <p className="text-gray-600 text-sm">Can't answer specific questions about YOUR business</p>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                      {problem.title}
+                    </h3>
+                    <p className="text-neutral-600 mb-3 leading-relaxed">
+                      {problem.description}
+                    </p>
+                    <p className="text-sm text-primary font-medium">
+                      → {problem.insight}
+                    </p>
                   </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-6 w-6 text-error flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Zero lead qualification</p>
-                    <p className="text-gray-600 text-sm">Just collects emails and hopes for the best</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-6 w-6 text-error flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">No integration with your systems</p>
-                    <p className="text-gray-600 text-sm">Sits in isolation, provides no real value</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <XCircle className="h-6 w-6 text-error flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">You're just a monthly subscription</p>
-                    <p className="text-gray-600 text-sm">Zero customization, take it or leave it</p>
-                  </div>
-                </li>
-              </ul>
-
-              <div className="mt-6 p-4 bg-error/5 rounded-lg border border-error/20">
-                <p className="text-center text-error font-bold">
-                  Result: Leads walk away. Revenue lost.
-                </p>
-              </div>
-            </div>
-
-            {/* HookTXT AI - Right Side */}
-            <div className="bg-gradient-to-br from-primary/5 to-accent2/5 rounded-2xl p-8 border-2 border-primary shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-primary/10 p-3 rounded-xl">
-                  <Zap className="h-8 w-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">HookTXT AI Systems</h3>
-                  <p className="text-primary font-semibold">Custom-Built Revenue Machines</p>
                 </div>
               </div>
-
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Custom responses for YOUR business</p>
-                    <p className="text-gray-600 text-sm">Knows your products, services, and pricing</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Deep business integration</p>
-                    <p className="text-gray-600 text-sm">Connected to inventory, CRM, and your data</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Intelligent lead qualification</p>
-                    <p className="text-gray-600 text-sm">Scores leads, prioritizes hot prospects automatically</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Multi-agent architecture</p>
-                    <p className="text-gray-600 text-sm">Specialized agents work together for better results</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">Built specifically for YOU</p>
-                    <p className="text-gray-600 text-sm">Custom development, not a template</p>
-                  </div>
-                </li>
-              </ul>
-
-              <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
-                <p className="text-center text-primary font-bold">
-                  Result: Leads captured. Revenue generated.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Bottom Stats */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-error mb-2">78%</div>
-                <p className="text-gray-700 font-semibold mb-1">Of generic chatbots</p>
-                <p className="text-gray-600 text-sm">fail to answer industry-specific questions</p>
-              </div>
-              <div className="border-t md:border-t-0 md:border-l md:border-r border-gray-200 py-6 md:py-0">
-                <div className="text-4xl font-bold text-primary mb-2">5X</div>
-                <p className="text-gray-700 font-semibold mb-1">Higher conversion rate</p>
-                <p className="text-gray-600 text-sm">with custom-built AI vs generic chatbots</p>
-              </div>
-              <div className="border-t md:border-t-0 border-gray-200 pt-6 md:pt-0">
-                <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                <p className="text-gray-700 font-semibold mb-1">Your AI never sleeps</p>
-                <p className="text-gray-600 text-sm">capturing leads while competitors miss them</p>
+          {/* The Solution Approach */}
+          <div className="bg-gradient-to-br from-primary/5 via-white to-secondary/5 rounded-3xl border border-primary/10 p-8 md:p-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+                A Better Approach
+              </h3>
+              <p className="text-xl text-neutral-700 leading-relaxed mb-8">
+                The businesses seeing real results from AI do not use generic chatbots.
+                They build <span className="font-bold text-primary">custom systems</span> that understand their unique processes,
+                integrate with their tools, and work like an extension of their team.
+              </p>
+
+              {/* Key Principles */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-2xl shadow-card flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-primary">1</span>
+                  </div>
+                  <p className="font-semibold text-neutral-900 mb-2">Specialized Agents</p>
+                  <p className="text-sm text-neutral-600">Each AI handles what it does best</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-2xl shadow-card flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-secondary">2</span>
+                  </div>
+                  <p className="font-semibold text-neutral-900 mb-2">Deep Integration</p>
+                  <p className="text-sm text-neutral-600">Connected to your actual systems</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-2xl shadow-card flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-accent1">3</span>
+                  </div>
+                  <p className="font-semibold text-neutral-900 mb-2">Custom Training</p>
+                  <p className="text-sm text-neutral-600">Built for your specific business</p>
+                </div>
               </div>
             </div>
           </div>

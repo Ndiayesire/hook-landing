@@ -5,19 +5,19 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0D3324',
-          dark: '#092318',
-          light: '#164D36',
+          DEFAULT: '#0A2463',
+          dark: '#061840',
+          light: '#0E3380',
         },
         secondary: {
-          DEFAULT: '#E3EDC7',
-          dark: '#D6E4B0',
-          light: '#EDF4D8',
+          DEFAULT: '#7FB069',
+          dark: '#6A9456',
+          light: '#95C17D',
         },
         accent1: {
-          DEFAULT: '#8CA494',
-          dark: '#738b7f',
-          light: '#a1b5a8',
+          DEFAULT: '#F77F00',
+          dark: '#D66D00',
+          light: '#FF9419',
         },
         accent2: {
           DEFAULT: '#4C6A65',
@@ -25,9 +25,9 @@ export default {
           light: '#5d7a75',
         },
         accent3: {
-          DEFAULT: '#C2D3B7',
-          dark: '#b0c5a3',
-          light: '#d4e1cb',
+          DEFAULT: '#E8E9EB',
+          dark: '#D4D5D8',
+          light: '#F5F5F6',
         },
         success: {
           DEFAULT: '#10B981',
@@ -44,14 +44,29 @@ export default {
           dark: '#DC2626',
           light: '#F87171',
         },
+        neutral: {
+          50: '#FAFAFA',
+          100: '#F5F5F5',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
       },
       fontFamily: {
         sans: ['Garet', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 2px 10px rgba(0, 0, 0, 0.05)',
-        'medium': '0 4px 20px rgba(0, 0, 0, 0.08)',
-        'sm': '0 1px 3px rgba(0, 0, 0, 0.04)',
+        'soft': '0 2px 10px rgba(10, 36, 99, 0.05)',
+        'medium': '0 4px 20px rgba(10, 36, 99, 0.08)',
+        'large': '0 10px 40px rgba(10, 36, 99, 0.12)',
+        'sm': '0 1px 3px rgba(10, 36, 99, 0.04)',
+        'card': '0 2px 8px rgba(10, 36, 99, 0.06)',
+        'hover': '0 8px 24px rgba(10, 36, 99, 0.10)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
