@@ -65,6 +65,16 @@ const blogPosts = [
     date: 'April 8, 2025',
     readTime: '6 min read',
     slug: 'ai-chat-customer-perspective'
+  },
+  {
+    id: 7,
+    title: 'AI is Flipping Car Shopping on Its Head',
+    excerpt: 'A new survey by Cars.com shows how much Artificial Intelligence is starting to shape how people buy cars. According to their data, 44% of consumers now use AI-powered tools to help them shop.',
+    coverImage: 'https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    category: 'AI Trends',
+    date: 'November 27, 2025',
+    readTime: '7 min read',
+    slug: 'ai-flipping-car-shopping'
   }
 ];
 
