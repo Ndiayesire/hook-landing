@@ -8,11 +8,20 @@
 import React from 'react';
 import Button from '../common/Button';
 import { ArrowRight, ShoppingCart } from 'lucide-react';
+import Aurora from '../common/Aurora';
 
 const EcommerceHeroSection: React.FC = () => {
   return (
-    <div className="relative bg-white pt-32 pb-32 md:pt-48 md:pb-48">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <div className="relative bg-white pt-32 pb-32 md:pt-48 md:pb-48 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Aurora
+          colorStops={["#10B981", "#3B82F6", "#8B5CF6"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Headline */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-secondary leading-[1.1] mb-8 tracking-tight">
