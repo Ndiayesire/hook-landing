@@ -9,6 +9,61 @@ import { Calendar, User, Clock, ArrowLeft, Share2, Bookmark, MessageCircle, Hear
 // Mock blog post data - would come from an API in a real application
 const blogPosts = [
   {
+    id: 7,
+    title: 'AI is Flipping Car Shopping on Its Head',
+    content: `
+      <p>A new survey by Cars.com shows how much Artificial Intelligence is starting to shape how people buy cars. According to their data, 44% of consumers now use AI-powered tools to help them shop. And among those people, 97% say AI will influence their purchase decision.</p>
+
+      <p>That matters. It signals that AI is no longer a novelty for car buyers — it's becoming a trusted co-pilot.</p>
+
+      <h2>What buyers actually use AI for</h2>
+      <p>These are the main ways people lean on AI when hunting for a car:</p>
+      <ul>
+        <li>Matching their needs with vehicle models — size, price range, features.</li>
+        <li>Estimating price ranges and seeing if a model fits their budget.</li>
+        <li>Checking reliability history, comparing pros/cons, answering specific questions fast.</li>
+      </ul>
+
+      <p>Three-quarters of those who use AI (73%) say it saves them time, and many see it as a starting point for their research.</p>
+      <p>For roughly 30%, the AI-generated result is already good enough — they don't feel the need to dig further.</p>
+
+      <h2>Trust — yes, but with caution</h2>
+      <p>Most respondents (about 71%) trust AI tools to give accurate, unbiased info on vehicles.</p>
+      <p>Still, there is a healthy dose of skepticism: 63% say they worry AI might push biased recommendations (favored dealers, specific brands, etc.).</p>
+
+      <p>So people are open to AI, but they expect transparency and good data behind the suggestions.</p>
+
+      <h2>What it means for dealers and car marketplaces</h2>
+      <p>If I were running a dealership or marketplace right now, I'd treat AI not as a threat, but as an amplifier of my reach and credibility.</p>
+      <ul>
+        <li>AI tools help buyers narrow down choices before they ever visit the lot. That means more serious leads, better qualified.</li>
+        <li>Buyers still want to see a human when it comes time to talk budget or financing. AI seems more helpful in the research phase than the negotiation phase.</li>
+        <li>That said, if AI tools are known to show bias — or if a dealer's data is incomplete — you risk losing trust.</li>
+      </ul>
+
+      <p>Bottom line: dealers and marketplaces that lean into AI, keep data transparent, and integrate smoothly with human support will win.</p>
+
+      <h2>What this trend means for car shoppers</h2>
+      <p>If you're in the market for a car, this is good news for you:</p>
+      <ul>
+        <li>You can use AI early to compare models, features, prices and build a shortlist — without spending hours browsing.</li>
+        <li>You can avoid wasted time, focus only on cars that match what you truly want/need.</li>
+        <li>But you still need to double-check: AI can help you find options, but you should verify reliability, pricing, and financing yourself — just like you would with anything big.</li>
+      </ul>
+
+      <p>AI doesn't replace human judgement. It helps you be smarter faster.</p>
+
+      <h2>Your takeaway</h2>
+      <p>AI is quickly becoming a foundational tool in car shopping. For buyers, it means faster, smarter research. For sellers and dealers, it signals a shift: if you don't adapt, you risk being invisible. Use AI as a tool to serve customers — not replace them.</p>
+    `,
+    coverImage: 'https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    category: 'AI Trends',
+    date: 'November 27, 2025',
+    readTime: '7 min read',
+    slug: 'ai-flipping-car-shopping',
+    relatedPosts: [1, 4, 5]
+  },
+  {
     id: 1,
     title: 'The Future Is Hybrid: Why AI Alone Can\'t Replace Human Customer Service',
     content: `
@@ -176,61 +231,6 @@ const blogPosts = [
     readTime: '6 min read',
     slug: 'ai-chat-customer-perspective',
     relatedPosts: [1, 2, 5]
-  },
-  {
-    id: 7,
-    title: 'AI is Flipping Car Shopping on Its Head',
-    content: `
-      <p>A new survey by Cars.com shows how much Artificial Intelligence is starting to shape how people buy cars. According to their data, 44% of consumers now use AI-powered tools to help them shop. And among those people, 97% say AI will influence their purchase decision.</p>
-
-      <p>That matters. It signals that AI is no longer a novelty for car buyers — it's becoming a trusted co-pilot.</p>
-
-      <h2>What buyers actually use AI for</h2>
-      <p>These are the main ways people lean on AI when hunting for a car:</p>
-      <ul>
-        <li>Matching their needs with vehicle models — size, price range, features.</li>
-        <li>Estimating price ranges and seeing if a model fits their budget.</li>
-        <li>Checking reliability history, comparing pros/cons, answering specific questions fast.</li>
-      </ul>
-
-      <p>Three-quarters of those who use AI (73%) say it saves them time, and many see it as a starting point for their research.</p>
-      <p>For roughly 30%, the AI-generated result is already good enough — they don't feel the need to dig further.</p>
-
-      <h2>Trust — yes, but with caution</h2>
-      <p>Most respondents (about 71%) trust AI tools to give accurate, unbiased info on vehicles.</p>
-      <p>Still, there is a healthy dose of skepticism: 63% say they worry AI might push biased recommendations (favored dealers, specific brands, etc.).</p>
-
-      <p>So people are open to AI, but they expect transparency and good data behind the suggestions.</p>
-
-      <h2>What it means for dealers and car marketplaces</h2>
-      <p>If I were running a dealership or marketplace right now, I'd treat AI not as a threat, but as an amplifier of my reach and credibility.</p>
-      <ul>
-        <li>AI tools help buyers narrow down choices before they ever visit the lot. That means more serious leads, better qualified.</li>
-        <li>Buyers still want to see a human when it comes time to talk budget or financing. AI seems more helpful in the research phase than the negotiation phase.</li>
-        <li>That said, if AI tools are known to show bias — or if a dealer's data is incomplete — you risk losing trust.</li>
-      </ul>
-
-      <p>Bottom line: dealers and marketplaces that lean into AI, keep data transparent, and integrate smoothly with human support will win.</p>
-
-      <h2>What this trend means for car shoppers</h2>
-      <p>If you're in the market for a car, this is good news for you:</p>
-      <ul>
-        <li>You can use AI early to compare models, features, prices and build a shortlist — without spending hours browsing.</li>
-        <li>You can avoid wasted time, focus only on cars that match what you truly want/need.</li>
-        <li>But you still need to double-check: AI can help you find options, but you should verify reliability, pricing, and financing yourself — just like you would with anything big.</li>
-      </ul>
-
-      <p>AI doesn't replace human judgement. It helps you be smarter faster.</p>
-
-      <h2>Your takeaway</h2>
-      <p>AI is quickly becoming a foundational tool in car shopping. For buyers, it means faster, smarter research. For sellers and dealers, it signals a shift: if you don't adapt, you risk being invisible. Use AI as a tool to serve customers — not replace them.</p>
-    `,
-    coverImage: 'https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'AI Trends',
-    date: 'November 27, 2025',
-    readTime: '7 min read',
-    slug: 'ai-flipping-car-shopping',
-    relatedPosts: [1, 4, 5]
   }
 ];
 
