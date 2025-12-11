@@ -1,13 +1,6 @@
-/**
- * Header Component - NuroAI-Inspired Floating Navigation
- *
- * Floating pill-shaped header with centered navigation and
- * elegant hover states. Inspired by modern SaaS designs.
- */
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageSquare } from 'lucide-react';
 import Logo from '../common/Logo';
 
 const Header: React.FC = () => {
@@ -35,62 +28,63 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // Close mobile menu when route changes
     setIsMenuOpen(false);
   }, [location]);
 
   const navLinks = [
-    { name: 'Product', path: '/custom-ai-systems' },
-    { name: 'Pricing', path: '/contact' },
-    { name: 'Resources', path: '/dealership-ai' },
-    { name: 'Blogs', path: '/blog' },
+    { name: 'Home', path: '/' },
+    { name: 'Custom AI', path: '/custom-ai-systems' },
+    { name: 'Dealership AI', path: '/dealership-ai' },
+    { name: 'Ecommerce AI', path: '/ecommerce-ai-agent' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <header className="fixed w-full z-50 transition-all duration-300 pt-4 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div
-          className={`flex justify-between items-center h-14 px-6 rounded-full transition-all duration-300 ${
-            isScrolled
-              ? 'bg-white/95 backdrop-blur-md shadow-md'
-              : 'bg-white/90 backdrop-blur-sm shadow-soft'
-          }`}
-        >
+    <header 
+      className={`fixed w-full z-50 transition-all duration-300 bg-white ${
+        isScrolled ? 'shadow-sm' : ''
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <Logo />
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-gray-600 hover:text-primary font-medium transition-colors text-sm ${
-                  location.pathname === link.path ? 'text-primary' : ''
+                className={`text-gray-700 hover:text-primary font-medium transition-colors text-sm ${
+                  location.pathname === link.path ? 'text-primary font-semibold' : ''
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-          </nav>
-
-          <div className="hidden lg:flex items-center space-x-3">
-            <Link
-              to="http://my.hooktxt.com/login"
-              className="px-4 py-2 text-gray-600 hover:text-primary font-medium transition-colors text-sm"
-            >
-              Sign in
-            </Link>
-            <a
+            <a 
               href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 rounded-full bg-primary text-white hover:bg-primary-dark transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md"
+              className="ml-2 px-4 py-2 rounded-md bg-primary text-white hover:bg-primary-dark transition-colors flex items-center text-sm"
             >
-              Sign up
+              <MessageSquare className="mr-2 h-4 w-4" />
+              Book a Demo
             </a>
-          </div>
+            <Link
+              to="http://my.hooktxt.com/login"
+              className="ml-4 px-4 py-2 rounded-md border border-gray-200 text-gray-700 hover:bg-gray-50 transition-colors text-sm"
+            >
+              Log in
+            </Link>
+          </nav>
 
-          <button
+          {/* Mobile Menu Button */}
+          <button 
             className="lg:hidden text-gray-700 focus:outline-none"
             onClick={toggleMenu}
             aria-label="Toggle menu"
@@ -100,40 +94,34 @@ const Header: React.FC = () => {
         </div>
       </div>
 
+      {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-2 mx-4">
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="px-6 py-4">
-              <nav className="flex flex-col space-y-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    className={`text-gray-700 hover:text-primary hover:bg-neutral-50 py-3 px-4 rounded-lg font-medium transition-all ${
-                      location.pathname === link.path ? 'text-primary bg-primary/5' : ''
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <div className="pt-4 mt-2 border-t border-gray-100 space-y-2">
-                  <Link
-                    to="http://my.hooktxt.com/login"
-                    className="block px-4 py-3 text-gray-700 hover:bg-neutral-50 rounded-lg text-center font-medium transition-colors"
-                  >
-                    Sign in
-                  </Link>
-                  <a
-                    href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-3 rounded-full bg-primary text-white text-center font-medium hover:bg-primary-dark transition-colors"
-                  >
-                    Sign up
-                  </a>
-                </div>
-              </nav>
-            </div>
+        <div className="lg:hidden bg-white shadow-md animate-slide-down">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`text-gray-700 hover:text-primary py-2 font-medium transition-colors ${
+                    location.pathname === link.path ? 'text-primary font-semibold' : ''
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <a 
+                href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="px-4 py-2 rounded-md bg-primary text-white text-center mt-4 hover:bg-primary-dark transition-colors"
+              >
+                Book a Demo
+              </a>
+              <Link to="http://my.hooktxt.com/login" className="px-4 py-2 rounded-md border border-gray-200 text-gray-700 text-center mt-2 hover:bg-gray-50 transition-colors">
+                Log in
+              </Link>
+            </nav>
           </div>
         </div>
       )}
