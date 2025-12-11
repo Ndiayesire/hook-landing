@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-white text-gray-600 border-t border-gray-100">
+    <footer className="bg-neutral-50 text-gray-600 border-t border-gray-200">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
@@ -140,7 +140,7 @@ const Footer: React.FC = () => {
                 placeholder="Your email address"
                 required
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2 rounded-md border text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm ${
+                className={`w-full px-4 py-2.5 rounded-xl border-2 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm bg-white ${
                   error ? 'border-red-500' : 'border-gray-200'
                 }`}
               />
@@ -150,10 +150,10 @@ const Footer: React.FC = () => {
               {success && (
                 <p className="text-sm text-green-600 mt-1">Successfully subscribed!</p>
               )}
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={isSubmitting}
-                className={`w-full btn bg-primary text-white hover:bg-primary-dark transition-colors py-2 rounded-md text-sm ${
+                className={`w-full btn bg-primary text-white hover:bg-primary-dark transition-all py-2.5 rounded-xl text-sm font-medium ${
                   isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                 }`}
               >

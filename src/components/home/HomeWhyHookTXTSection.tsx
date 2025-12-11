@@ -49,9 +49,11 @@ const HomeWhyHookTXTSection: React.FC = () => {
             ].map((principle, index) => (
               <div
                 key={index}
-                className="bg-white border border-neutral-200 rounded-lg p-8 hover:border-primary transition-all duration-300"
+                className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300"
               >
-                <principle.icon className="h-10 w-10 text-primary mb-6" />
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <principle.icon className="h-7 w-7 text-primary" />
+                </div>
                 <h3 className="text-2xl font-bold text-secondary mb-4">
                   {principle.title}
                 </h3>

@@ -29,7 +29,7 @@ const CtaSection: React.FC = () => {
             to="/contact"
             variant="secondary"
             size="lg"
-            className="bg-white text-primary hover:bg-neutral-50 px-10 py-5 text-lg font-semibold rounded-lg shadow-md hover:shadow-lg transition-all group inline-flex items-center"
+            className="bg-white text-primary hover:bg-neutral-50 px-10 py-5 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all group inline-flex items-center"
           >
             Schedule a Strategy Call
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

@@ -51,10 +51,12 @@ const HomeProblemSection: React.FC = () => {
             ].map((problem, index) => (
               <div
                 key={index}
-                className="bg-white border border-neutral-200 rounded-lg p-8 hover:border-primary transition-all duration-300"
+                className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300"
               >
                 <div className="mb-4">
-                  <problem.icon className="h-8 w-8 text-primary mb-4" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                    <problem.icon className="h-7 w-7 text-primary" />
+                  </div>
                   <h3 className="text-2xl font-bold text-secondary mb-3">
                     {problem.title}
                   </h3>
@@ -67,7 +69,7 @@ const HomeProblemSection: React.FC = () => {
           </div>
 
           {/* The Solution Approach */}
-          <div className="bg-white rounded-lg border border-neutral-200 p-12 md:p-16 text-center">
+          <div className="bg-white rounded-2xl p-12 md:p-16 text-center shadow-card">
             <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               A Better Approach
             </h3>
