@@ -64,21 +64,15 @@ export default {
         'soft': '0 1px 3px rgba(0, 0, 0, 0.04)',
         'medium': '0 2px 8px rgba(0, 0, 0, 0.06)',
         'large': '0 4px 16px rgba(0, 0, 0, 0.08)',
-        'xl': '0 8px 24px rgba(0, 0, 0, 0.12)',
-        '2xl': '0 12px 32px rgba(0, 0, 0, 0.15)',
         'sm': '0 1px 2px rgba(0, 0, 0, 0.03)',
-        'card': '0 2px 8px rgba(0, 0, 0, 0.08)',
-        'card-hover': '0 8px 24px rgba(0, 0, 0, 0.12)',
+        'card': '0 1px 3px rgba(0, 0, 0, 0.05)',
         'hover': '0 4px 12px rgba(0, 0, 0, 0.08)',
-        'float': '0 10px 30px rgba(0, 0, 0, 0.1)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
         'float': 'float 4s ease-in-out infinite',
-        'float-slow': 'float 6s ease-in-out infinite',
-        'tilt': 'tilt 10s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -95,11 +89,7 @@ export default {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        tilt: {
-          '0%, 100%': { transform: 'rotate(-2deg)' },
-          '50%': { transform: 'rotate(2deg)' },
+          '50%': { transform: 'translateY(-40px)' },
         },
       },
     },

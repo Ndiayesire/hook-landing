@@ -24,38 +24,30 @@ const HomeRealResultsSection: React.FC = () => {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            <div className="bg-white rounded-2xl p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="h-7 w-7 text-primary" />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            <div className="bg-white border border-neutral-200 rounded-lg p-8 text-center">
+              <DollarSign className="h-10 w-10 text-primary mx-auto mb-4" />
               <div className="text-5xl font-bold text-secondary mb-2">$3.2M+</div>
               <p className="text-neutral-900 font-semibold mb-1">Revenue Generated</p>
               <p className="text-neutral-600 text-sm">Across all implementations</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-7 w-7 text-primary" />
-              </div>
+            <div className="bg-white border border-neutral-200 rounded-lg p-8 text-center">
+              <Users className="h-10 w-10 text-primary mx-auto mb-4" />
               <div className="text-5xl font-bold text-secondary mb-2">18,500+</div>
               <p className="text-neutral-900 font-semibold mb-1">Leads Captured</p>
               <p className="text-neutral-600 text-sm">That would have been lost</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-7 w-7 text-primary" />
-              </div>
+            <div className="bg-white border border-neutral-200 rounded-lg p-8 text-center">
+              <TrendingUp className="h-10 w-10 text-primary mx-auto mb-4" />
               <div className="text-5xl font-bold text-secondary mb-2">87%</div>
               <p className="text-neutral-900 font-semibold mb-1">Average ROI</p>
               <p className="text-neutral-600 text-sm">Within first 6 months</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-7 w-7 text-primary" />
-              </div>
+            <div className="bg-white border border-neutral-200 rounded-lg p-8 text-center">
+              <Clock className="h-10 w-10 text-primary mx-auto mb-4" />
               <div className="text-5xl font-bold text-secondary mb-2">24/7</div>
               <p className="text-neutral-900 font-semibold mb-1">Always Working</p>
               <p className="text-neutral-600 text-sm">Including holidays & weekends</p>
@@ -65,8 +57,8 @@ const HomeRealResultsSection: React.FC = () => {
           {/* Case Study Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Dealership Case */}
-            <div className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-xs font-bold text-primary mb-4">
+            <div className="bg-white border border-neutral-200 rounded-lg p-8">
+              <div className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-bold text-primary mb-4">
                 AUTO DEALERSHIP
               </div>
               <h3 className="text-3xl font-bold text-secondary mb-4">
@@ -89,8 +81,8 @@ const HomeRealResultsSection: React.FC = () => {
             </div>
 
             {/* Ecommerce Case */}
-            <div className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-xs font-bold text-primary mb-4">
+            <div className="bg-white border border-neutral-200 rounded-lg p-8">
+              <div className="inline-block px-3 py-1 bg-primary/10 rounded-full text-xs font-bold text-primary mb-4">
                 E-COMMERCE
               </div>
               <h3 className="text-3xl font-bold text-secondary mb-4">

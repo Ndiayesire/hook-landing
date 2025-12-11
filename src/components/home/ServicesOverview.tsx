@@ -11,7 +11,7 @@ import Button from '../common/Button';
 
 const ServicesOverview: React.FC = () => {
   return (
-    <div className="py-32 md:py-48 bg-gradient-to-b from-white to-neutral-50">
+    <div className="py-32 md:py-48 bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -27,11 +27,9 @@ const ServicesOverview: React.FC = () => {
           {/* Product Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {/* Custom AI Systems */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+            <div className="group bg-white border border-neutral-200 rounded-lg overflow-hidden hover:border-primary transition-all duration-300">
               <div className="p-8">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Brain className="h-7 w-7 text-primary" />
-                </div>
+                <Brain className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-3xl font-bold text-secondary mb-3">Custom AI</h3>
                 <p className="text-neutral-600 mb-6 leading-relaxed">
                   Built from the ground up for your unique business needs, processes, and customer journey.
@@ -52,7 +50,7 @@ const ServicesOverview: React.FC = () => {
                 <Button
                   to="/custom-ai-systems"
                   variant="outline"
-                  className="w-full border-2 border-neutral-200 hover:border-primary hover:bg-primary hover:text-white transition-all group rounded-xl"
+                  className="w-full border-2 border-neutral-200 hover:border-primary hover:bg-primary hover:text-white transition-all group"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 inline group-hover:translate-x-1 transition-transform" />
@@ -61,11 +59,9 @@ const ServicesOverview: React.FC = () => {
             </div>
 
             {/* Dealership AI */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
+            <div className="group bg-white border border-neutral-200 rounded-lg overflow-hidden hover:border-primary transition-all duration-300">
               <div className="p-8">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Car className="h-7 w-7 text-primary" />
-                </div>
+                <Car className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-3xl font-bold text-secondary mb-3">Dealership AI</h3>
                 <p className="text-neutral-600 mb-6 leading-relaxed">
                   Capture after-hours leads and qualify prospects automatically while your team sleeps.
@@ -86,7 +82,7 @@ const ServicesOverview: React.FC = () => {
                 <Button
                   to="/dealership-ai"
                   variant="outline"
-                  className="w-full border-2 border-neutral-200 hover:border-primary hover:bg-primary hover:text-white transition-all group rounded-xl"
+                  className="w-full border-2 border-neutral-200 hover:border-primary hover:bg-primary hover:text-white transition-all group"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 inline group-hover:translate-x-1 transition-transform" />
@@ -95,14 +91,12 @@ const ServicesOverview: React.FC = () => {
             </div>
 
             {/* Ecommerce AI */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative ring-2 ring-primary/20">
-              <div className="absolute top-6 right-6 bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold">
+            <div className="group bg-white border-2 border-primary rounded-lg overflow-hidden transition-all duration-300 relative">
+              <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
                 POPULAR
               </div>
               <div className="p-8">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <ShoppingCart className="h-7 w-7 text-primary" />
-                </div>
+                <ShoppingCart className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-3xl font-bold text-secondary mb-3">Ecommerce AI</h3>
                 <p className="text-neutral-600 mb-6 leading-relaxed">
                   Turn browsers into buyers with intelligent cart recovery and product recommendations.
@@ -123,7 +117,7 @@ const ServicesOverview: React.FC = () => {
                 <Button
                   to="/ecommerce-ai-agent"
                   variant="primary"
-                  className="w-full bg-primary hover:bg-primary-dark text-white group rounded-xl"
+                  className="w-full bg-primary hover:bg-primary-dark text-white group"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 inline group-hover:translate-x-1 transition-transform" />
@@ -133,7 +127,7 @@ const ServicesOverview: React.FC = () => {
           </div>
 
           {/* Help Choosing CTA */}
-          <div className="bg-white rounded-2xl p-12 md:p-16 text-center shadow-card">
+          <div className="bg-neutral-50 rounded-lg p-12 md:p-16 text-center border border-neutral-200">
             <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
               Need Help Choosing?
             </h3>
@@ -144,7 +138,7 @@ const ServicesOverview: React.FC = () => {
               to="/contact"
               variant="primary"
               size="lg"
-              className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all group"
+              className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg shadow-sm hover:shadow-md transition-all group"
             >
               Schedule a Strategy Call
               <ArrowRight className="ml-2 h-5 w-5 inline group-hover:translate-x-1 transition-transform" />

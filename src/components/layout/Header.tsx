@@ -66,18 +66,18 @@ const Header: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <a
+            <a 
               href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 px-5 py-2.5 rounded-xl bg-primary text-white hover:bg-primary-dark transition-all hover:shadow-md flex items-center text-sm font-medium"
+              className="ml-2 px-4 py-2 rounded-md bg-primary text-white hover:bg-primary-dark transition-colors flex items-center text-sm"
             >
               <MessageSquare className="mr-2 h-4 w-4" />
               Book a Demo
             </a>
             <Link
               to="http://my.hooktxt.com/login"
-              className="ml-2 px-5 py-2.5 rounded-xl border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all text-sm font-medium"
+              className="ml-4 px-4 py-2 rounded-md border border-gray-200 text-gray-700 hover:bg-gray-50 transition-colors text-sm"
             >
               Log in
             </Link>
@@ -110,15 +110,15 @@ const Header: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
-              <a
+              <a 
                 href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-3 rounded-xl bg-primary text-white text-center mt-4 hover:bg-primary-dark transition-all font-medium"
+                rel="noopener noreferrer" 
+                className="px-4 py-2 rounded-md bg-primary text-white text-center mt-4 hover:bg-primary-dark transition-colors"
               >
                 Book a Demo
               </a>
-              <Link to="http://my.hooktxt.com/login" className="px-5 py-3 rounded-xl border-2 border-gray-200 text-gray-700 text-center mt-2 hover:bg-gray-50 transition-all font-medium">
+              <Link to="http://my.hooktxt.com/login" className="px-4 py-2 rounded-md border border-gray-200 text-gray-700 text-center mt-2 hover:bg-gray-50 transition-colors">
                 Log in
               </Link>
             </nav>
