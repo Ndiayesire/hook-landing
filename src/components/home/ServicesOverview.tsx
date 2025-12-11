@@ -1,150 +1,184 @@
 /**
- * ServicesOverview Component - Mia.inc Minimal Style
+ * ServicesOverview Component - NuroAI-Inspired Design
  *
- * Clean, minimal presentation of the 3 solutions.
- * Focus on clarity and simplicity.
+ * Modern presentation of the 3 solutions with visual cards,
+ * animations, and clean typography.
  */
 
 import React from 'react';
-import { Brain, Car, ShoppingCart, ArrowRight } from 'lucide-react';
-import Button from '../common/Button';
+import { motion } from 'framer-motion';
+import { Brain, Car, ShoppingCart, ArrowRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  bestFor: string;
+  features: string[];
+  link: string;
+  isPopular?: boolean;
+  delay: number;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  icon,
+  title,
+  description,
+  bestFor,
+  features,
+  link,
+  isPopular,
+  delay,
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      className={`relative bg-white rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg ${
+        isPopular ? 'border-primary shadow-md' : 'border-neutral-100 hover:border-primary/50'
+      }`}
+    >
+      {isPopular && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="px-4 py-1 bg-primary text-white text-xs font-semibold rounded-full">
+            POPULAR
+          </span>
+        </div>
+      )}
+
+      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+        {icon}
+      </div>
+
+      <h3 className="text-xl font-bold text-secondary mb-2">{title}</h3>
+      <p className="text-sm text-gray-500 mb-4">{description}</p>
+
+      <div className="mb-4">
+        <p className="text-xs font-semibold text-gray-400 uppercase mb-1">Best for</p>
+        <p className="text-sm text-secondary font-medium">{bestFor}</p>
+      </div>
+
+      <ul className="space-y-2 mb-6">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center gap-2 text-sm text-gray-600">
+            <Check className="w-4 h-4 text-primary flex-shrink-0" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+
+      <Link
+        to={link}
+        className={`w-full flex items-center justify-center gap-2 py-3 rounded-full font-medium transition-all duration-300 ${
+          isPopular
+            ? 'bg-primary text-white hover:bg-primary-dark'
+            : 'bg-neutral-100 text-secondary hover:bg-primary hover:text-white'
+        }`}
+      >
+        Learn More
+        <ArrowRight className="w-4 h-4" />
+      </Link>
+    </motion.div>
+  );
+};
 
 const ServicesOverview: React.FC = () => {
+  const services = [
+    {
+      icon: <Brain className="w-6 h-6 text-primary" />,
+      title: 'Custom AI',
+      description: 'Built from the ground up for your unique business needs, processes, and customer journey.',
+      bestFor: 'B2B, SaaS, Services, Complex Sales',
+      features: [
+        'Multi-agent architecture',
+        'Deep system integration',
+        'Custom training & workflows',
+        'Real-time dashboards',
+      ],
+      link: '/custom-ai-systems',
+      isPopular: false,
+    },
+    {
+      icon: <Car className="w-6 h-6 text-primary" />,
+      title: 'Dealership AI',
+      description: 'Capture after-hours leads and qualify prospects automatically while your team sleeps.',
+      bestFor: 'Auto Dealerships, Vehicle Sales',
+      features: [
+        'Inventory integration',
+        '5-level lead scoring',
+        'Bilingual (EN/FR)',
+        '24/7 availability',
+      ],
+      link: '/dealership-ai',
+      isPopular: false,
+    },
+    {
+      icon: <ShoppingCart className="w-6 h-6 text-primary" />,
+      title: 'Ecommerce AI',
+      description: 'Turn browsers into buyers with intelligent cart recovery and product recommendations.',
+      bestFor: 'E-commerce, Online Retail, D2C',
+      features: [
+        'Cart recovery system',
+        'Product recommendations',
+        'Instant support 24/7',
+        'Objection handling',
+      ],
+      link: '/ecommerce-ai-agent',
+      isPopular: true,
+    },
+  ];
+
   return (
-    <div className="py-32 md:py-48 bg-white">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-secondary">
-              Three Solutions
-            </h2>
-            <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto">
-              Each system is custom-built for specific industries and use cases.
-            </p>
-          </div>
+    <div className="py-20 md:py-32 bg-neutral-50">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <span className="text-sm font-medium text-primary mb-3 block">Solutions</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
+            Three Solutions
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Each system is custom-built for specific industries and use cases.
+          </p>
+        </motion.div>
 
-          {/* Product Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-            {/* Custom AI Systems */}
-            <div className="group bg-white border border-neutral-200 rounded-lg overflow-hidden hover:border-primary transition-all duration-300">
-              <div className="p-8">
-                <Brain className="h-10 w-10 text-primary mb-6" />
-                <h3 className="text-3xl font-bold text-secondary mb-3">Custom AI</h3>
-                <p className="text-neutral-600 mb-6 leading-relaxed">
-                  Built from the ground up for your unique business needs, processes, and customer journey.
-                </p>
-
-                <div className="mb-6">
-                  <p className="text-sm font-semibold text-neutral-500 mb-2">BEST FOR</p>
-                  <p className="text-neutral-900">B2B, SaaS, Services, Complex Sales</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 text-neutral-600">
-                  <li>• Multi-agent architecture</li>
-                  <li>• Deep system integration</li>
-                  <li>• Custom training & workflows</li>
-                  <li>• Real-time dashboards</li>
-                </ul>
-
-                <Button
-                  to="/custom-ai-systems"
-                  variant="outline"
-                  className="w-full border-2 border-neutral-200 hover:border-primary hover:bg-primary hover:text-white transition-all group"
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 inline group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Dealership AI */}
-            <div className="group bg-white border border-neutral-200 rounded-lg overflow-hidden hover:border-primary transition-all duration-300">
-              <div className="p-8">
-                <Car className="h-10 w-10 text-primary mb-6" />
-                <h3 className="text-3xl font-bold text-secondary mb-3">Dealership AI</h3>
-                <p className="text-neutral-600 mb-6 leading-relaxed">
-                  Capture after-hours leads and qualify prospects automatically while your team sleeps.
-                </p>
-
-                <div className="mb-6">
-                  <p className="text-sm font-semibold text-neutral-500 mb-2">BEST FOR</p>
-                  <p className="text-neutral-900">Auto Dealerships, Vehicle Sales</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 text-neutral-600">
-                  <li>• Inventory integration</li>
-                  <li>• 5-level lead scoring</li>
-                  <li>• Bilingual (EN/FR)</li>
-                  <li>• 24/7 availability</li>
-                </ul>
-
-                <Button
-                  to="/dealership-ai"
-                  variant="outline"
-                  className="w-full border-2 border-neutral-200 hover:border-primary hover:bg-primary hover:text-white transition-all group"
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 inline group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Ecommerce AI */}
-            <div className="group bg-white border-2 border-primary rounded-lg overflow-hidden transition-all duration-300 relative">
-              <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold">
-                POPULAR
-              </div>
-              <div className="p-8">
-                <ShoppingCart className="h-10 w-10 text-primary mb-6" />
-                <h3 className="text-3xl font-bold text-secondary mb-3">Ecommerce AI</h3>
-                <p className="text-neutral-600 mb-6 leading-relaxed">
-                  Turn browsers into buyers with intelligent cart recovery and product recommendations.
-                </p>
-
-                <div className="mb-6">
-                  <p className="text-sm font-semibold text-neutral-500 mb-2">BEST FOR</p>
-                  <p className="text-neutral-900">E-commerce, Online Retail, D2C</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 text-neutral-600">
-                  <li>• Cart recovery system</li>
-                  <li>• Product recommendations</li>
-                  <li>• Instant support 24/7</li>
-                  <li>• Objection handling</li>
-                </ul>
-
-                <Button
-                  to="/ecommerce-ai-agent"
-                  variant="primary"
-                  className="w-full bg-primary hover:bg-primary-dark text-white group"
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 inline group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Help Choosing CTA */}
-          <div className="bg-neutral-50 rounded-lg p-12 md:p-16 text-center border border-neutral-200">
-            <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
-              Need Help Choosing?
-            </h3>
-            <p className="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
-              Schedule a conversation with our team. We'll help you understand which solution makes the most sense for your business goals.
-            </p>
-            <Button
-              to="/contact"
-              variant="primary"
-              size="lg"
-              className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg shadow-sm hover:shadow-md transition-all group"
-            >
-              Schedule a Strategy Call
-              <ArrowRight className="ml-2 h-5 w-5 inline group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} delay={index * 0.1} />
+          ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-white rounded-2xl p-8 md:p-12 text-center border border-neutral-100 shadow-sm"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-4">
+            Need Help Choosing?
+          </h3>
+          <p className="text-gray-500 mb-6 max-w-lg mx-auto">
+            Schedule a conversation with our team. We'll help you understand which solution makes the most sense for your business goals.
+          </p>
+          <a
+            href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            Schedule a Strategy Call
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </div>
   );

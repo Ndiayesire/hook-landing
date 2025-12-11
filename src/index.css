@@ -16,29 +16,29 @@
   }
 
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight;
-  }
-
-  h2 {
     @apply text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight;
   }
 
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight tracking-tight;
+  }
+
   h3 {
-    @apply text-3xl md:text-4xl leading-snug;
+    @apply text-2xl md:text-3xl leading-snug;
   }
 
   p {
-    @apply text-lg md:text-xl leading-relaxed text-neutral-600;
+    @apply text-base md:text-lg leading-relaxed text-neutral-600;
   }
 }
 
 @layer components {
   .btn {
-    @apply inline-block rounded-full px-6 py-3 font-medium transition-all duration-300;
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 font-medium transition-all duration-300;
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark;
+    @apply bg-primary text-white hover:bg-primary-dark shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
@@ -66,64 +66,59 @@
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-card overflow-hidden transition-all duration-300 border border-neutral-100 hover:shadow-hover;
+    @apply bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-300 border border-neutral-100 hover:shadow-medium;
   }
 
   .feature-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
   }
 
   .feature-card {
-    @apply p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-200 hover:shadow-card transition-all;
+    @apply p-6 bg-white rounded-2xl border border-neutral-100 hover:border-primary/30 hover:shadow-soft transition-all duration-300;
   }
 
   .feature-icon {
-    @apply mb-6 p-4 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 inline-flex;
+    @apply mb-4 p-3 rounded-xl bg-primary/10 inline-flex;
   }
-  
-  /* Split layout styles */
+
   .split-layout {
     @apply grid grid-cols-1 lg:grid-cols-2 gap-12 items-center;
   }
-  
-  /* Simple Animations */
+
   .fade-in {
     animation: fadeIn 0.5s ease-in-out;
   }
-  
+
   .slide-up {
     animation: slideUp 0.5s ease-out;
   }
-  
+
   @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-  
+
   @keyframes slideUp {
     0% { transform: translateY(20px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
   }
-  
-  /* Modern card styles */
+
   .feature-card-modern {
-    @apply bg-white p-6 rounded-lg border border-gray-100 hover:shadow-sm transition-all duration-300;
-  }
-  
-  .stat-card {
-    @apply bg-white p-6 rounded-lg border border-gray-100 text-center;
-  }
-  
-  .testimonial-card {
-    @apply bg-white p-6 rounded-lg border border-gray-100 shadow-sm;
-  }
-  
-  /* Client logo styles */
-  .client-logo {
-    @apply bg-white p-4 rounded-lg flex items-center justify-center h-16 filter grayscale hover:grayscale-0 hover:shadow-sm transition-all duration-300;
+    @apply bg-white p-6 rounded-2xl border border-neutral-100 hover:shadow-soft transition-all duration-300;
   }
 
-  /* Blog styles */
+  .stat-card {
+    @apply bg-white p-6 rounded-2xl border border-neutral-100 text-center;
+  }
+
+  .testimonial-card {
+    @apply bg-white p-6 rounded-2xl border border-neutral-100 shadow-soft;
+  }
+
+  .client-logo {
+    @apply bg-white p-4 rounded-xl flex items-center justify-center h-16 filter grayscale hover:grayscale-0 hover:shadow-soft transition-all duration-300;
+  }
+
   .prose {
     @apply max-w-none text-gray-700;
   }
@@ -131,32 +126,40 @@
   .prose h2 {
     @apply text-2xl font-bold mt-8 mb-4 text-gray-800;
   }
-  
+
   .prose h3 {
     @apply text-xl font-bold mt-6 mb-3 text-gray-800;
   }
-  
+
   .prose p {
     @apply mb-4;
   }
-  
+
   .prose ul {
     @apply list-disc pl-5 mb-4;
   }
-  
+
   .prose ol {
     @apply list-decimal pl-5 mb-4;
   }
-  
+
   .prose li {
     @apply mb-2;
   }
-  
+
   .prose a {
     @apply text-primary hover:underline;
   }
-  
+
   .prose blockquote {
     @apply border-l-4 border-primary pl-4 italic my-4;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-100 shadow-soft;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-neutral-50 via-white to-orange-50/30;
   }
 }
