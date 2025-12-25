@@ -5,9 +5,19 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#15373E',
-          dark: '#0D2429',
-          light: '#1F4A52',
+          DEFAULT: '#0D9488',
+          dark: '#0F766E',
+          light: '#14B8A6',
+          50: '#F0FDFA',
+          100: '#CCFBF1',
+          200: '#99F6E4',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+          700: '#0F766E',
+          800: '#115E59',
+          900: '#134E4A',
         },
         secondary: {
           DEFAULT: '#1A1A1A',
@@ -16,9 +26,9 @@ export default {
         },
         dark: '#0F1419',
         accent1: {
-          DEFAULT: '#15373E',
-          dark: '#0D2429',
-          light: '#1F4A52',
+          DEFAULT: '#0D9488',
+          dark: '#0F766E',
+          light: '#14B8A6',
         },
         accent2: {
           DEFAULT: '#4C6A65',
@@ -70,7 +80,13 @@ export default {
         'hover': '0 4px 12px rgba(0, 0, 0, 0.08)',
         'bento': '0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.06)',
         'float': '0 20px 50px rgba(0, 0, 0, 0.15)',
-        'glow': '0 0 40px rgba(21, 55, 62, 0.15)',
+        'glow': '0 0 40px rgba(13, 148, 136, 0.15)',
+        'lumea': '0 4px 20px rgba(0, 0, 0, 0.08)',
+        'lumea-lg': '0 8px 40px rgba(0, 0, 0, 0.12)',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -79,6 +95,7 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'float-slow': 'float 8s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -96,6 +113,10 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseSoft: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
         },
       },
     },

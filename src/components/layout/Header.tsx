@@ -1,8 +1,8 @@
 /**
  * Header - Lumea-inspired navigation
  *
- * Clean header with products dropdown, pill-shaped buttons,
- * and smooth transitions.
+ * Clean header with teal accent colors, pill-shaped buttons,
+ * and smooth transitions matching the Lumea design system.
  */
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -46,14 +46,14 @@ const Header: React.FC = () => {
       description: 'Convert browsers into buyers 24/7',
       path: '/ecommerce-ai-agent',
       icon: ShoppingCart,
-      color: 'bg-blue-50 text-blue-600'
+      color: 'bg-primary/10 text-primary'
     },
     {
       name: 'Dealership AI',
       description: 'Never miss a lead, day or night',
       path: '/dealership-ai',
       icon: Car,
-      color: 'bg-green-50 text-green-600'
+      color: 'bg-primary/10 text-primary'
     },
     {
       name: 'Custom AI',
@@ -63,6 +63,8 @@ const Header: React.FC = () => {
       color: 'bg-primary/10 text-primary'
     }
   ];
+
+  const isProductsActive = ['/ecommerce-ai-agent', '/dealership-ai', '/custom-ai-systems'].includes(location.pathname);
 
   return (
     <header
@@ -81,7 +83,7 @@ const Header: React.FC = () => {
               to="/"
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 location.pathname === '/'
-                  ? 'bg-neutral-100 text-neutral-900'
+                  ? 'bg-primary/10 text-primary'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
               }`}
             >
@@ -92,8 +94,8 @@ const Header: React.FC = () => {
               <button
                 onClick={() => setIsProductsOpen(!isProductsOpen)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1 ${
-                  ['/ecommerce-ai-agent', '/dealership-ai', '/custom-ai-systems'].includes(location.pathname)
-                    ? 'bg-neutral-100 text-neutral-900'
+                  isProductsActive
+                    ? 'bg-primary/10 text-primary'
                     : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
                 }`}
               >
@@ -107,7 +109,7 @@ const Header: React.FC = () => {
                     <Link
                       key={product.path}
                       to={product.path}
-                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-neutral-50 transition-colors"
+                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-primary/5 transition-colors"
                     >
                       <div className={`w-10 h-10 rounded-xl ${product.color} flex items-center justify-center flex-shrink-0`}>
                         <product.icon className="w-5 h-5" />
@@ -126,7 +128,7 @@ const Header: React.FC = () => {
               to="/blog"
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 location.pathname.startsWith('/blog')
-                  ? 'bg-neutral-100 text-neutral-900'
+                  ? 'bg-primary/10 text-primary'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
               }`}
             >
@@ -137,7 +139,7 @@ const Header: React.FC = () => {
               to="/about"
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 location.pathname === '/about'
-                  ? 'bg-neutral-100 text-neutral-900'
+                  ? 'bg-primary/10 text-primary'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
               }`}
             >
@@ -148,7 +150,7 @@ const Header: React.FC = () => {
               to="/contact"
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 location.pathname === '/contact'
-                  ? 'bg-neutral-100 text-neutral-900'
+                  ? 'bg-primary/10 text-primary'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50'
               }`}
             >
@@ -161,15 +163,15 @@ const Header: React.FC = () => {
               href="https://my.hooktxt.com/login"
               className="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
             >
-              Log in
+              Sign in
             </a>
             <a
               href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full text-sm font-semibold hover:bg-primary-dark transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full text-sm font-semibold hover:bg-primary-dark transition-all shadow-sm hover:shadow-md"
             >
-              Book a Demo
+              Get started
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -191,7 +193,7 @@ const Header: React.FC = () => {
               <Link
                 to="/"
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  location.pathname === '/' ? 'bg-neutral-100 text-neutral-900' : 'text-neutral-600'
+                  location.pathname === '/' ? 'bg-primary/10 text-primary' : 'text-neutral-600'
                 }`}
               >
                 Home
@@ -206,7 +208,7 @@ const Header: React.FC = () => {
                   key={product.path}
                   to={product.path}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                    location.pathname === product.path ? 'bg-neutral-100' : ''
+                    location.pathname === product.path ? 'bg-primary/10' : ''
                   }`}
                 >
                   <div className={`w-8 h-8 rounded-lg ${product.color} flex items-center justify-center`}>
@@ -219,7 +221,7 @@ const Header: React.FC = () => {
               <Link
                 to="/blog"
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  location.pathname.startsWith('/blog') ? 'bg-neutral-100 text-neutral-900' : 'text-neutral-600'
+                  location.pathname.startsWith('/blog') ? 'bg-primary/10 text-primary' : 'text-neutral-600'
                 }`}
               >
                 Blog
@@ -228,7 +230,7 @@ const Header: React.FC = () => {
               <Link
                 to="/about"
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  location.pathname === '/about' ? 'bg-neutral-100 text-neutral-900' : 'text-neutral-600'
+                  location.pathname === '/about' ? 'bg-primary/10 text-primary' : 'text-neutral-600'
                 }`}
               >
                 About
@@ -237,7 +239,7 @@ const Header: React.FC = () => {
               <Link
                 to="/contact"
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  location.pathname === '/contact' ? 'bg-neutral-100 text-neutral-900' : 'text-neutral-600'
+                  location.pathname === '/contact' ? 'bg-primary/10 text-primary' : 'text-neutral-600'
                 }`}
               >
                 Contact
@@ -248,7 +250,7 @@ const Header: React.FC = () => {
                   href="https://my.hooktxt.com/login"
                   className="px-4 py-3 text-center text-sm font-medium text-neutral-600 border border-neutral-200 rounded-full hover:bg-neutral-50 transition-colors"
                 >
-                  Log in
+                  Sign in
                 </a>
                 <a
                   href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
@@ -256,7 +258,7 @@ const Header: React.FC = () => {
                   rel="noopener noreferrer"
                   className="px-4 py-3 text-center text-sm font-semibold text-white bg-primary rounded-full hover:bg-primary-dark transition-colors"
                 >
-                  Book a Demo
+                  Get started
                 </a>
               </div>
             </nav>

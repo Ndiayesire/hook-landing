@@ -2,7 +2,7 @@
  * Footer - Lumea-inspired dark footer
  *
  * Multi-column layout with newsletter signup
- * and social links.
+ * and social links using teal accent colors.
  */
 
 import React, { useState } from 'react';
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 href="https://twitter.com/hooktxt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
               >
                 <Twitter className="w-4 h-4 text-white/70" />
               </a>
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                 href="https://linkedin.com/company/hooktxt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
               >
                 <Linkedin className="w-4 h-4 text-white/70" />
               </a>
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-white/60 hover:text-white text-sm transition-colors"
+                    className="text-white/60 hover:text-primary text-sm transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-white/60 hover:text-white text-sm transition-colors"
+                    className="text-white/60 hover:text-primary text-sm transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -140,12 +140,12 @@ const Footer: React.FC = () => {
                   placeholder="Enter your email"
                   required
                   disabled={isSubmitting}
-                  className="flex-1 px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-white/30 transition-colors"
+                  className="flex-1 px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-4 py-2.5 bg-white text-dark rounded-full font-medium text-sm hover:bg-neutral-100 transition-colors disabled:opacity-50"
+                  className="px-4 py-2.5 bg-primary text-white rounded-full font-medium text-sm hover:bg-primary-dark transition-colors disabled:opacity-50"
                 >
                   <ArrowRight className="w-4 h-4" />
                 </button>
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="hover:text-white transition-colors"
+                className="hover:text-primary transition-colors"
               >
                 {item.name}
               </Link>
