@@ -14,6 +14,7 @@ export default {
           dark: '#000000',
           light: '#404040',
         },
+        dark: '#0F1419',
         accent1: {
           DEFAULT: '#15373E',
           dark: '#0D2429',
@@ -58,7 +59,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 1px 3px rgba(0, 0, 0, 0.04)',
@@ -67,12 +68,17 @@ export default {
         'sm': '0 1px 2px rgba(0, 0, 0, 0.03)',
         'card': '0 1px 3px rgba(0, 0, 0, 0.05)',
         'hover': '0 4px 12px rgba(0, 0, 0, 0.08)',
+        'bento': '0 2px 8px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.06)',
+        'float': '0 20px 50px rgba(0, 0, 0, 0.15)',
+        'glow': '0 0 40px rgba(21, 55, 62, 0.15)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
-        'float': 'float 4s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out infinite 2s',
       },
       keyframes: {
         fadeIn: {
@@ -89,7 +95,7 @@ export default {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-40px)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
       },
     },
