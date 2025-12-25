@@ -70,7 +70,7 @@
   }
 
   .bento-card {
-    @apply bg-white rounded-3xl p-6 lg:p-8 border border-neutral-100 shadow-bento transition-all duration-300 hover:shadow-lumea-lg hover:-translate-y-1;
+    @apply bg-white rounded-3xl p-6 lg:p-8 border border-neutral-100 shadow-lumea transition-all duration-300 hover:shadow-lumea-lg hover:-translate-y-1;
   }
 
   .bento-card-teal {
