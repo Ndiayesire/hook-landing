@@ -1,13 +1,6 @@
-/**
- * Footer - Lumea-inspired dark footer
- *
- * Multi-column layout with newsletter signup
- * and social links using teal accent colors.
- */
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, ArrowRight, Linkedin, Twitter } from 'lucide-react';
+import { MessageSquare, Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Facebook } from 'lucide-react';
 import Logo from '../common/Logo';
 
 const WEBHOOK_URL = 'https://hooktxt.app.n8n.cloud/webhook-test/64952ad7-48f4-4c93-b0d2-6df6d1a3daa7';
@@ -26,9 +19,14 @@ const Footer: React.FC = () => {
     setSuccess(false);
 
     try {
+      // Log submission attempt for debugging
+      console.log('Submitting newsletter form with email:', email);
+      
       const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           email: email,
           source: 'Newsletter Subscription',
@@ -36,154 +34,138 @@ const Footer: React.FC = () => {
         })
       });
 
-      if (!response.ok) throw new Error('Request failed');
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      console.log('Newsletter submission completed');
       setSuccess(true);
       setEmail('');
-    } catch {
+    } catch (err) {
+      console.error('Error submitting newsletter form:', err);
       setError('Failed to subscribe. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const products = [
-    { name: 'E-commerce AI', path: '/ecommerce-ai-agent' },
-    { name: 'Dealership AI', path: '/dealership-ai' },
-    { name: 'Custom AI', path: '/custom-ai-systems' },
-  ];
-
-  const company = [
-    { name: 'About', path: '/about' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
-  const legal = [
-    { name: 'Privacy Policy', path: '/privacy' },
-    { name: 'Terms of Service', path: '/terms' },
-  ];
-
   return (
-    <footer className="bg-dark text-white">
-      <div className="container mx-auto px-4 sm:px-6 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8">
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <Logo variant="light" />
-            </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
-              AI-powered customer engagement that actually closes deals. Stop losing leads to generic chatbots.
+    <footer className="bg-white text-gray-600 border-t border-gray-100">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <Logo />
+            <p className="text-gray-500 mt-4 text-sm">
+              Merging automation with human empathy in every customer interaction.
             </p>
-            <div className="flex items-center gap-4">
-              <a
-                href="https://twitter.com/hooktxt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
-              >
-                <Twitter className="w-4 h-4 text-white/70" />
+            <div className="flex space-x-4 pt-4">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Twitter size={18} />
               </a>
-              <a
-                href="https://linkedin.com/company/hooktxt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
-              >
-                <Linkedin className="w-4 h-4 text-white/70" />
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Linkedin size={18} />
               </a>
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Products</h4>
-            <ul className="space-y-3">
-              {products.map((item) => (
-                <li key={item.path}>
-                  <Link
-                    to={item.path}
-                    className="text-white/60 hover:text-primary text-sm transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-lg font-semibold mb-4 text-gray-800">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/" className="text-gray-500 hover:text-primary transition-colors">Home</Link>
+              </li>
+              <li>
+                <Link to="/custom-ai-systems" className="text-gray-500 hover:text-primary transition-colors">Custom AI Systems</Link>
+              </li>
+              <li>
+                <Link to="/dealership-ai" className="text-gray-500 hover:text-primary transition-colors">Dealership AI</Link>
+              </li>
+              <li>
+                <Link to="/ecommerce-ai-agent" className="text-gray-500 hover:text-primary transition-colors">Ecommerce AI</Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-500 hover:text-primary transition-colors">Blog</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-500 hover:text-primary transition-colors">Contact</Link>
+              </li>
             </ul>
           </div>
 
+          {/* About Section */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Company</h4>
-            <ul className="space-y-3">
-              {company.map((item) => (
-                <li key={item.path}>
-                  <Link
-                    to={item.path}
-                    className="text-white/60 hover:text-primary text-sm transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-lg font-semibold mb-4 text-gray-800">Legal</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/privacy" className="text-gray-500 hover:text-primary transition-colors">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-gray-500 hover:text-primary transition-colors">Terms of Service</Link>
+              </li>
             </ul>
           </div>
 
-          <div className="lg:col-span-2">
-            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Newsletter</h4>
-            <p className="text-white/60 text-sm mb-4">
-              Get the latest AI insights delivered to your inbox.
-            </p>
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  disabled={isSubmitting}
-                  className="flex-1 px-4 py-2.5 rounded-full bg-white/5 border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-4 py-2.5 bg-primary text-white rounded-full font-medium text-sm hover:bg-primary-dark transition-colors disabled:opacity-50"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-              {error && <p className="text-red-400 text-xs">{error}</p>}
-              {success && <p className="text-green-400 text-xs">Successfully subscribed!</p>}
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-gray-800">Contact Us</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center">
+                <Mail size={16} className="mr-2 text-gray-400" />
+                <span className="text-gray-500">info@hooktxt.com</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin size={16} className="mr-2 mt-1 text-gray-400" />
+                <span className="text-gray-500">41 King West, Sherbrooke<br />Québec, Canada, J1H 1P1</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-gray-800">Stay Updated</h4>
+            <p className="text-gray-500 mb-4 text-sm">Subscribe to our newsletter for the latest updates.</p>
+            <form onSubmit={handleSubmit} className="space-y-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                required
+                disabled={isSubmitting}
+                className={`w-full px-4 py-2 rounded-md border text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm ${
+                  error ? 'border-red-500' : 'border-gray-200'
+                }`}
+              />
+              {error && (
+                <p className="text-sm text-red-600 mt-1">{error}</p>
+              )}
+              {success && (
+                <p className="text-sm text-green-600 mt-1">Successfully subscribed!</p>
+              )}
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className={`w-full btn bg-primary text-white hover:bg-primary-dark transition-colors py-2 rounded-md text-sm ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+              </button>
             </form>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mt-16 pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-white/40">
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>info@hooktxt.com</span>
-            </div>
-            <div className="hidden sm:block w-1 h-1 rounded-full bg-white/20"></div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>Sherbrooke, Quebec, Canada</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-6 text-sm text-white/40">
-            {legal.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="hover:text-primary transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        <div className="text-center mt-8 text-sm text-white/30">
-          &copy; {currentYear} HookTXT. All rights reserved.
+        {/* Copyright */}
+        <div className="border-t border-gray-200 mt-12 pt-6 text-center text-gray-400 text-sm">
+          <p>&copy; {currentYear} HookTXT. All rights reserved.</p>
         </div>
       </div>
     </footer>

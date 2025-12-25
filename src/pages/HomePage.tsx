@@ -1,19 +1,22 @@
 /**
- * HomePage Component - Lumea-inspired design
+ * HomePage Component
  *
- * Main landing page with modern bento grid layout, floating UI elements,
- * teal accent colors, and clean sections showcasing HookTXT's AI products.
+ * Main landing page showcasing HookTXT's 3 specialized AI products.
+ * Features aggressive, results-focused messaging emphasizing revenue
+ * generation over generic chatbot functionality.
  */
 
 import React from 'react';
 import SEO from '../components/common/SEO';
 import StructuredData from '../components/common/StructuredData';
 import HeroSection from '../components/home/HeroSection';
-import BentoGrid from '../components/home/BentoGrid';
-import FeaturesShowcase from '../components/home/FeaturesShowcase';
-import StatsSection from '../components/home/StatsSection';
-import PricingPreview from '../components/home/PricingPreview';
-import NewsletterCTA from '../components/home/NewsletterCTA';
+import HomeProblemSection from '../components/home/HomeProblemSection';
+import ServicesOverview from '../components/home/ServicesOverview';
+import HomeHowItWorksSection from '../components/home/HomeHowItWorksSection';
+import HomeRealResultsSection from '../components/home/HomeRealResultsSection';
+import TestimonialsSection from '../components/home/TestimonialsSection';
+import HomeWhyHookTXTSection from '../components/home/HomeWhyHookTXTSection';
+import CtaSection from '../components/home/CtaSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -27,11 +30,13 @@ const HomePage: React.FC = () => {
       />
       <StructuredData />
       <HeroSection />
-      <BentoGrid />
-      <FeaturesShowcase />
-      <StatsSection />
-      <PricingPreview />
-      <NewsletterCTA />
+      <HomeProblemSection />
+      <ServicesOverview />
+      <HomeHowItWorksSection />
+      <HomeRealResultsSection />
+      <TestimonialsSection />
+      <HomeWhyHookTXTSection />
+      <CtaSection />
     </>
   );
 };

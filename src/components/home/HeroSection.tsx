@@ -1,88 +1,78 @@
 /**
- * HeroSection - Lumea-inspired hero with floating UI elements
+ * HeroSection Component - Mia.inc Minimal Style
  *
- * Split layout with content on left and floating cards on right.
- * Features social proof, badge, and trust logos.
+ * Ultra-clean, minimal hero section inspired by Mia.inc design.
+ * Focus on whitespace, bold typography, and subtle interactions.
  */
 
 import React from 'react';
-import { ArrowRight, Star } from 'lucide-react';
-import HeroFloatingCards from './HeroFloatingCards';
-import LogoBar from './LogoBar';
+import { ArrowRight } from 'lucide-react';
+import Button from '../common/Button';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-white pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full text-sm text-primary font-medium mb-6">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-              AI-Powered Customer Engagement
-            </div>
+    <div className="relative bg-white pt-32 pb-32 md:pt-48 md:pb-48">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Main Headline */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-secondary leading-[1.1] mb-8 tracking-tight">
+            Scale Your Sales Team
+            <br />
+            Without Scaling
+            <br />
+            <span className="text-primary">Headcount</span>
+          </h1>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-neutral-900 leading-[1.1] tracking-tight mb-6">
-              Boost Sales Efficiency with{' '}
-              <span className="text-primary">Smart AI Assistant</span>
-            </h1>
+          {/* Subheadline */}
+          <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed max-w-3xl mx-auto mb-12 font-normal">
+            The most successful businesses we work with have one thing in common:
+            they've systemized their customer conversations.
+          </p>
 
-            <p className="text-lg md:text-xl text-neutral-600 leading-relaxed mb-8">
-              HookTXT captures every moment of your customer interactions, so you can focus on meaningful decisions and closing deals.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a
-                href="https://calendly.com/kevin-crowdchat/chatinsight-demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-full text-base font-semibold hover:bg-primary-dark transition-all shadow-sm hover:shadow-md"
-              >
-                Get in touch
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-3">
-                <img
-                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="User"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                />
-                <img
-                  src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="User"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                />
-                <img
-                  src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="User"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                />
-                <img
-                  src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=100"
-                  alt="User"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                />
-              </div>
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
-                <span className="ml-1 text-sm font-semibold text-neutral-900">4.9</span>
-              </div>
-              <span className="text-sm text-neutral-500">750+ Reviews</span>
-            </div>
+          {/* CTA Button */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <Button
+              to="/contact"
+              variant="primary"
+              size="lg"
+              className="group bg-primary hover:bg-primary-dark text-white font-semibold text-lg px-10 py-5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2"
+            >
+              Schedule a Strategy Session
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button
+              to="/custom-ai-systems"
+              variant="outline"
+              size="lg"
+              className="text-secondary border-2 border-neutral-200 hover:border-primary font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300"
+            >
+              See How It Works
+            </Button>
           </div>
 
-          <div className="relative lg:h-[550px] hidden lg:block">
-            <HeroFloatingCards />
-          </div>
+          {/* Trust Indicator */}
+          <p className="text-base text-neutral-500 font-medium">
+            Trusted by growth-focused businesses generating $150K-$500K+ additional revenue
+          </p>
         </div>
 
-        <LogoBar />
+        {/* Stats Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-24">
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">3-5x</div>
+            <p className="text-neutral-600 font-medium">More Qualified Leads</p>
+          </div>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">24/7</div>
+            <p className="text-neutral-600 font-medium">Always Capturing</p>
+          </div>
+          <div className="text-center p-8 bg-white border border-neutral-100 rounded-lg">
+            <div className="text-5xl font-bold text-primary mb-2">&lt;2s</div>
+            <p className="text-neutral-600 font-medium">Response Time</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
