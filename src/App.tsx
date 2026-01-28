@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import CustomAIPage from './pages/CustomAIPage';
 import DealershipAIPage from './pages/DealershipAIPage';
 import EcommerceAIPage from './pages/EcommerceAIPage';
+import AuditPage from './pages/AuditPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/custom-ai-systems" element={<CustomAIPage />} />
             <Route path="/dealership-ai" element={<DealershipAIPage />} />
             <Route path="/ecommerce-ai-agent" element={<EcommerceAIPage />} />
+            <Route path="/ai-audit" element={<AuditPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
