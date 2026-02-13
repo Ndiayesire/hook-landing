@@ -26,7 +26,7 @@ const PrivacyPage: React.FC = () => {
       <Section background="white">
         <div className="max-w-4xl mx-auto prose prose-lg">
           <p className="lead">
-            This Privacy Policy applies to all services operated by Technologies HookTXT Inc., doing business as ChatInsight, Hook (SaaS), and Hook Services, headquartered at 1639 rue Mondor, Sherbrooke, Quebec, Canada.
+            This Privacy Policy applies to all services operated by Technologies HookTXT Inc., doing business as ChatInsight, Hook (SaaS), and Hook Services.
           </p>
           
           <p>
@@ -96,8 +96,7 @@ const PrivacyPage: React.FC = () => {
           <h2>8. Privacy Officer</h2>
           <p>
             Name: Kevin Michaud<br />
-            Email: privacy@hooktxt.com<br />
-            Address: 1639 rue Mondor, Sherbrooke, Quebec, J1J 3X7, Canada
+            Email: privacy@hooktxt.com
           </p>
 
           <h2>9. Cookies</h2>
