@@ -50,89 +50,89 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-white text-gray-600 border-t border-gray-100">
-      <div className="container mx-auto px-6 py-12">
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Logo />
-            <p className="text-gray-500 mt-4 text-sm">
+            <Logo variant="light" />
+            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
               Merging automation with human empathy in every customer interaction.
             </p>
             <div className="flex space-x-4 pt-4">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Twitter size={18} />
+              <a href="#" className="text-gray-400 hover:text-teal-light transition-colors duration-200">
+                <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Facebook size={18} />
+              <a href="#" className="text-gray-400 hover:text-teal-light transition-colors duration-200">
+                <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Instagram size={18} />
+              <a href="#" className="text-gray-400 hover:text-teal-light transition-colors duration-200">
+                <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Linkedin size={18} />
+              <a href="#" className="text-gray-400 hover:text-teal-light transition-colors duration-200">
+                <Linkedin size={20} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-800">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="text-gray-500 hover:text-primary transition-colors">Home</Link>
+                <Link to="/" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Home</Link>
               </li>
               <li>
-                <Link to="/custom-ai-systems" className="text-gray-500 hover:text-primary transition-colors">Custom AI Systems</Link>
+                <Link to="/custom-ai-systems" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Custom AI Systems</Link>
               </li>
               <li>
-                <Link to="/dealership-ai" className="text-gray-500 hover:text-primary transition-colors">Dealership AI</Link>
+                <Link to="/dealership-ai" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Dealership AI</Link>
               </li>
               <li>
-                <Link to="/ecommerce-ai-agent" className="text-gray-500 hover:text-primary transition-colors">Ecommerce AI</Link>
+                <Link to="/ecommerce-ai-agent" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Ecommerce AI</Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-500 hover:text-primary transition-colors">Blog</Link>
+                <Link to="/blog" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Blog</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-500 hover:text-primary transition-colors">Contact</Link>
+                <Link to="/contact" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Contact</Link>
               </li>
             </ul>
           </div>
 
           {/* About Section */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-800">Legal</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-lg font-bold mb-6 text-white">Legal</h4>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/privacy" className="text-gray-500 hover:text-primary transition-colors">Privacy Policy</Link>
+                <Link to="/privacy" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Privacy Policy</Link>
               </li>
               <li>
-                <Link to="/terms" className="text-gray-500 hover:text-primary transition-colors">Terms of Service</Link>
+                <Link to="/terms" className="text-gray-400 hover:text-teal-light transition-colors duration-200">Terms of Service</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-800">Contact Us</h4>
+            <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center">
                 <Mail size={16} className="mr-2 text-gray-400" />
-                <span className="text-gray-500">info@hooktxt.com</span>
+                <span className="text-gray-400">info@hooktxt.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1 text-gray-400" />
-                <span className="text-gray-500">41 King West, Sherbrooke<br />Québec, Canada, J1H 1P1</span>
+                <span className="text-gray-400">41 King West, Sherbrooke<br />Québec, Canada, J1H 1P1</span>
               </li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-800">Stay Updated</h4>
-            <p className="text-gray-500 mb-4 text-sm">Subscribe to our newsletter for the latest updates.</p>
-            <form onSubmit={handleSubmit} className="space-y-2">
+            <h4 className="text-lg font-bold mb-6 text-white">Stay Updated</h4>
+            <p className="text-gray-400 mb-4 text-sm leading-relaxed">Subscribe to our newsletter for the latest updates.</p>
+            <form onSubmit={handleSubmit} className="space-y-3">
               <input
                 type="email"
                 value={email}
@@ -140,20 +140,20 @@ const Footer: React.FC = () => {
                 placeholder="Your email address"
                 required
                 disabled={isSubmitting}
-                className={`w-full px-4 py-2 rounded-md border text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm ${
-                  error ? 'border-red-500' : 'border-gray-200'
+                className={`w-full px-4 py-3 rounded-full bg-gray-800 border text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-light focus:border-teal-light text-sm transition-all duration-200 ${
+                  error ? 'border-red-500' : 'border-gray-700'
                 }`}
               />
               {error && (
-                <p className="text-sm text-red-600 mt-1">{error}</p>
+                <p className="text-sm text-red-400 mt-1">{error}</p>
               )}
               {success && (
-                <p className="text-sm text-green-600 mt-1">Successfully subscribed!</p>
+                <p className="text-sm text-emerald mt-1">Successfully subscribed!</p>
               )}
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={isSubmitting}
-                className={`w-full btn bg-primary text-white hover:bg-primary-dark transition-colors py-2 rounded-md text-sm ${
+                className={`w-full px-6 py-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl text-sm font-semibold ${
                   isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                 }`}
               >
@@ -164,7 +164,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 mt-12 pt-6 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
           <p>&copy; {currentYear} HookTXT. All rights reserved.</p>
         </div>
       </div>

@@ -12,8 +12,8 @@ const Card: React.FC<CardProps> = ({
   hover = false,
 }) => {
   return (
-    <div 
-      className={`bg-white rounded-lg border border-gray-100 ${hover ? 'transition-all duration-300 hover:shadow-sm hover:-translate-y-1' : ''} ${className}`}
+    <div
+      className={`bg-white rounded-3xl shadow-lg ${hover ? 'transition-all duration-200 hover:shadow-xl hover:scale-105' : ''} ${className}`}
     >
       {children}
     </div>

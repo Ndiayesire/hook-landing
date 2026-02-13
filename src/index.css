@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply font-sans text-neutral-800 bg-white antialiased;
+    @apply font-sans text-gray-900 bg-white antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold text-neutral-900;
+    @apply font-sans font-bold text-gray-900;
   }
 
   h1 {
@@ -28,33 +28,33 @@
   }
 
   p {
-    @apply text-lg md:text-xl leading-relaxed text-neutral-600;
+    @apply text-lg md:text-xl leading-relaxed text-gray-600;
   }
 }
 
 @layer components {
   .btn {
-    @apply inline-block rounded-full px-6 py-3 font-medium transition-all duration-300;
+    @apply inline-block rounded-full px-8 py-4 font-semibold transition-all duration-200 hover:scale-105;
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark;
+    @apply bg-primary text-white shadow-xl hover:bg-primary-dark hover:shadow-2xl;
   }
 
   .btn-secondary {
-    @apply bg-white text-primary hover:bg-gray-50 border border-gray-200;
+    @apply bg-white text-primary shadow-xl hover:bg-gray-50 hover:shadow-2xl;
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl;
   }
 
   .btn-branded {
-    @apply bg-white text-primary hover:bg-gray-50 border border-gray-200 font-semibold;
+    @apply bg-white text-primary hover:bg-gray-50 border border-gray-200 font-semibold shadow-lg hover:shadow-xl;
   }
 
   .btn-accent {
-    @apply bg-accent2 text-white hover:bg-accent2-dark;
+    @apply bg-emerald text-white hover:bg-emerald-dark shadow-xl hover:shadow-2xl;
   }
 
   .section {
@@ -66,19 +66,19 @@
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-card overflow-hidden transition-all duration-300 border border-neutral-100 hover:shadow-hover;
+    @apply bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-200 hover:shadow-xl;
   }
 
   .feature-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
   }
 
   .feature-card {
-    @apply p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-200 hover:shadow-card transition-all;
+    @apply p-8 bg-gray-50 rounded-3xl hover:shadow-xl transition-all duration-200 hover:scale-105;
   }
 
   .feature-icon {
-    @apply mb-6 p-4 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 inline-flex;
+    @apply mb-6 p-3 rounded-full bg-primary inline-flex;
   }
   
   /* Split layout styles */
@@ -107,15 +107,24 @@
   
   /* Modern card styles */
   .feature-card-modern {
-    @apply bg-white p-6 rounded-lg border border-gray-100 hover:shadow-sm transition-all duration-300;
+    @apply bg-gray-50 p-6 rounded-3xl hover:shadow-xl transition-all duration-200;
   }
-  
+
   .stat-card {
-    @apply bg-white p-6 rounded-lg border border-gray-100 text-center;
+    @apply bg-white p-8 rounded-3xl shadow-lg text-center hover:shadow-xl transition-all duration-200;
   }
-  
+
   .testimonial-card {
-    @apply bg-white p-6 rounded-lg border border-gray-100 shadow-sm;
+    @apply bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-200;
+  }
+
+  /* Chat360 style gradient backgrounds */
+  .gradient-hero {
+    @apply bg-gradient-to-br from-primary via-primary-dark to-teal-200;
+  }
+
+  .blur-circle {
+    @apply absolute rounded-full blur-3xl opacity-20;
   }
   
   /* Client logo styles */

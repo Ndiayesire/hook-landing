@@ -27,20 +27,20 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const baseStyles = 'inline-block rounded-md font-medium transition-all duration-300 text-center';
-  
+  const baseStyles = 'inline-block rounded-full font-semibold transition-all duration-200 text-center hover:scale-105';
+
   const variantStyles = {
-    primary: 'bg-primary text-white hover:bg-primary-dark',
-    secondary: 'bg-white text-primary hover:bg-gray-50 border border-gray-200',
-    outline: 'border border-primary text-primary hover:bg-primary hover:text-white',
-    branded: 'bg-white text-primary hover:bg-gray-50 border border-gray-200 font-semibold',
-    accent: 'bg-accent2 text-white hover:bg-accent2-dark',
+    primary: 'bg-primary text-white shadow-xl hover:bg-primary-dark hover:shadow-2xl',
+    secondary: 'bg-white text-primary shadow-xl hover:bg-gray-50 hover:shadow-2xl',
+    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-lg hover:shadow-xl',
+    branded: 'bg-white text-primary hover:bg-gray-50 shadow-lg hover:shadow-xl',
+    accent: 'bg-emerald text-white hover:bg-emerald-dark shadow-xl hover:shadow-2xl',
   };
-  
+
   const sizeStyles = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-5 py-2.5 text-sm',
-    lg: 'px-6 py-3',
+    sm: 'px-5 py-2.5 text-sm',
+    md: 'px-7 py-3.5 text-base',
+    lg: 'px-8 py-4 text-lg',
   };
   
   const buttonClasses = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;

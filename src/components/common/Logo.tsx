@@ -1,12 +1,20 @@
 import React from 'react';
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  variant?: 'dark' | 'light';
+}
+
+const Logo: React.FC<LogoProps> = ({ variant = 'dark' }) => {
+  const logoSrc = variant === 'light'
+    ? 'https://i.ibb.co/xxfDsQh/hook-darkgreen.png'
+    : 'https://i.ibb.co/xxfDsQh/hook-darkgreen.png';
+
   return (
     <div className="flex items-center">
-      <img 
-        src="https://i.ibb.co/xxfDsQh/hook-darkgreen.png" 
-        alt="HookTXT Logo" 
-        className="h-8 w-auto"
+      <img
+        src={logoSrc}
+        alt="HookTXT Logo"
+        className={`h-10 w-auto ${variant === 'light' ? 'brightness-0 invert' : ''}`}
       />
     </div>
   );
